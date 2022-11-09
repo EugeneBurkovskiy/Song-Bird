@@ -13,7 +13,7 @@ module.exports = {
   mode: 'production',
   entry: {
     main: './index.js',
-    // game: './gamePage.js',
+    startPage: './startPage.js',
     // results: './results.js',
   },
   output: {
@@ -32,18 +32,18 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './index.html',
-      chunks: ['main'],
+      chunks: ['startPage'],
     }),
     // new HtmlWebpackPlugin({
     //   filename: 'results.html',
     //   template: './results.html',
     //   chunks: ['results'],
     // }),
-    // new HtmlWebpackPlugin({
-    //   filename: 'gamePage.html',
-    //   template: './gamePage.html',
-    //   chunks: ['game'],
-    // }),
+    new HtmlWebpackPlugin({
+      filename: 'gamePage.html',
+      template: './gamePage.html',
+      chunks: ['main'],
+    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new CopyWebpackPlugin({

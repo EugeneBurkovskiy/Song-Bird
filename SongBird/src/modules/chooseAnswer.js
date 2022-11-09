@@ -1,13 +1,16 @@
 import birdsData from './birds';
-import { gameMode } from './generateGame';
+import { gameMode } from './chooseMode';
+import checkAnswer from './checkAnswer';
 
 function chooseAnswer() {
   const answerRow = document.querySelector('.game__answer'),
     aboutBlock = document.querySelector('.game__about');
 
   answerRow.addEventListener('click', (e) => {
-    if (e.target && e.target.classList.contains('game__answer-item')) {
+    if (e.target && (e.currentTarget === answerRow || e.target.classList.contains('game__answer-text'))) {
+
       birdsData[gameMode - 1].forEach(bird => {
+
         if (bird.name === e.target.textContent) {
           aboutBlock.innerHTML = `
       <div class="game__about-img"><img src=${bird.image} alt="incognito"></div>
@@ -20,9 +23,10 @@ function chooseAnswer() {
             </div>
             <div class="game__about-descr">${bird.description}
             </div>
-      `;
+        `;
         }
       });
+      checkAnswer(e.target);
     }
   });
 }

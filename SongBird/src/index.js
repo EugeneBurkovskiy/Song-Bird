@@ -1,10 +1,8 @@
 import './scss/indexStyle.scss';
-import startGame from './modules/startGame';
-import generateGame from './modules/generateGame';
+import chooseMode from './modules/chooseMode';
 import chooseAnswer from './modules/chooseAnswer';
 
 window.addEventListener('DOMContentLoaded', () => {
-  startGame();
-  generateGame();
+  chooseMode();
   chooseAnswer();
 });

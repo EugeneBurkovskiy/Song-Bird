@@ -34,13 +34,14 @@
     }
     &__answer {
       grid-column: 1/4;
+      grid-row: 2/6;
     }
     &__about {
       grid-column: 1/4;
-      grid-row: 3/4;
+      grid-row: 6/7;
     }
     &__btn {
-      grid-row: 4/5;
+      grid-row: 7/8;
     }
   }
 }
