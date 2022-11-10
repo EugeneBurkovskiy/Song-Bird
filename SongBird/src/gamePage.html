@@ -26,90 +26,89 @@
 </head>
 
 <body>
-  <main class="game">
 
-    <header class="game__header">
-      <div class="container">
-        <div class="game__header-wrapper">
-          <div class="game__logo">Songs<span>Bird</span></div>
-          <div class="game__header-row">
-            <a href="index.html" class="game__header-button">⇦ На главную</a>
-            <a class="game__header-button">Галлерея ⇨</a>
-          </div>
+
+  <header class="header">
+    <div class="container">
+      <div class="header__wrapper">
+        <div class="header__logo">Songs<span>Bird</span></div>
+        <div class="header__row">
+          <a href="index.html" class="header__button">⇦ На главную</a>
+          <a class="header__button">Галлерея ⇨</a>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <section class="game__window">
-      <div class="container">
-        <div class="game__window-wrapper">
-          <ul class="game__window-row">
-            <li class="game__window-button" value="1">Разминка</li>
-            <li class="game__window-button" value="2">Воробьиные</li>
-            <li class="game__window-button" value="3">Лесные птицы</li>
-            <li class="game__window-button" value="4">Певчие птицы</li>
-            <li class="game__window-button" value="5">Хищные птицы</li>
-            <li class="game__window-button" value="6">Морские птицы</li>
-          </ul>
-          <ul class="game__status">
-            <li class="game__status-lvl">Уровень: 1</li>
-            <li class="game__status-score">Очки: 0</li>
-          </ul>
+  <article class="game">
+    <div class="container">
+      <ul class="game__mode">
+        <li class="game__button" value="1">Разминка</li>
+        <li class="game__button" value="2">Воробьиные</li>
+        <li class="game__button" value="3">Лесные птицы</li>
+        <li class="game__button" value="4">Певчие птицы</li>
+        <li class="game__button" value="5">Хищные птицы</li>
+        <li class="game__button" value="6">Морские птицы</li>
+      </ul>
+      <ul class="game__status">
+        <li class="game__status-lvl">Уровень: 1</li>
+        <li class="game__status-score">Очки: 0</li>
+      </ul>
+      <div class="game__wrapper">
+        <div class="game__blocking">
+          <p>⇧⇧⇧</p>
+          Please choose a game mode
         </div>
-        <div class="game__wrapper">
-          <div class="game__blocking">
-            <p>⇧⇧⇧</p>
-            Please choose a game mode
+        <div class="game__question">
+          <div class="game__question-img"><img src="assets/img/incognito.png" alt="incognito"></div>
+          <div class="game__question-info">
+            <div class="game__question-name">***</div>
+            <hr class="game__question-divider">
+            <audio class="game__question-audio" src="assets/audio/btnsound.mp3" controls></audio>
           </div>
-          <div class="game__question">
-            <div class="game__question-img"><img src="assets/img/incognito.png" alt="incognito"></div>
-            <div class="game__question-info">
-              <div class="game__question-name">***</div>
-              <hr class="game__question-divider">
-              <audio class="game__question-audio" src="assets/audio/btnsound.mp3" controls></audio>
+        </div>
+        <ul class="game__answer">
+          <li class="game__answer-item">Орел</li>
+          <li class="game__answer-item">Коршун</li>
+          <li class="game__answer-item">Лунь</li>
+          <li class="game__answer-item">Сокол</li>
+          <li class="game__answer-item">Ястреб</li>
+          <li class="game__answer-item">Флиин</li>
+        </ul>
+        <div class="game__about">
+          <div class="game__about-block">Послушайте аудио и выберите птицу</div>
+
+          <div class="game__about-wrapper">
+            <div class="game__about-img"><img src="assets/img/incognito.png" alt="incognito"></div>
+            <div class="game__about-info">
+              <div class="game__about-name">???</div>
+              <hr class="game__about-divider">
+              <div class="game__about-subname">???</div>
+              <hr class="game__about-divider">
+              <audio class="game__about-audio" src="assets/audio/btnsound.mp3" controls></audio>
+            </div>
+            <div class="game__about-descr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus, pariatur!
             </div>
           </div>
-          <ul class="game__answer">
-            <li class="game__answer-item">Орел</li>
-            <li class="game__answer-item">Коршун</li>
-            <li class="game__answer-item">Лунь</li>
-            <li class="game__answer-item">Сокол</li>
-            <li class="game__answer-item">Ястреб</li>
-            <li class="game__answer-item">Флиин</li>
-          </ul>
-          <div class="game__about">
-            <div class="game__about-block">Послушайте аудио и выберите птицу</div>
-
-            <div class="game__about-wrapper">
-              <div class="game__about-img"><img src="assets/img/incognito.png" alt="incognito"></div>
-              <div class="game__about-info">
-                <div class="game__about-name">???</div>
-                <hr class="game__about-divider">
-                <div class="game__about-subname">???</div>
-                <hr class="game__about-divider">
-                <audio class="game__about-audio" src="assets/audio/btnsound.mp3" controls></audio>
-              </div>
-              <div class="game__about-descr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus, pariatur!
-              </div>
-            </div>
-
-          </div>
-          <div class="game__btn">Next</div>
-    </section>
-
-    <footer class="game__footer">
-      <div class="container">
-        <div class="game__footer-row">
-          <a class="game__footer-github" href="https://github.com/EugeneBurkovskiy"><img
-              src="assets/icons/iconmonstr-github-1.svg" alt="GitHub"></a>
-          <span class="game__footer-year">2022</span>
-          <a href="https://rs.school/" class="game__footer-img">
-            <img src="assets/icons/rs_school_js.svg" alt="RS School">
-          </a>
         </div>
+        <div class="game__next">Next</div>
       </div>
-    </footer>
-  </main>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__row">
+        <a class="footer__github" href="https://github.com/EugeneBurkovskiy"><img
+            src="assets/icons/iconmonstr-github-1.svg" alt="GitHub"></a>
+        <span class="footer__year">2022</span>
+        <a href="https://rs.school/" class="footer__img">
+          <img src="assets/icons/rs_school_js.svg" alt="RS School">
+        </a>
+      </div>
+    </div>
+  </footer>
+
 
 </body>
 

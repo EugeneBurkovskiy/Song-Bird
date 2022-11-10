@@ -14,7 +14,7 @@ function generateGame() {
   const answerBlock = document.querySelector('.game__answer'),
     qustionAudio = document.querySelector('.game__question-audio'),
     aboutBlock = document.querySelector('.game__about-block'),
-    nextButton = document.querySelector('.game__btn'),
+    nextButton = document.querySelector('.game__next'),
     questionImg = document.querySelector('.game__question-img > img'),
     questionName = document.querySelector('.game__question-name'),
     lvlNumber = document.querySelector('.game__status-lvl');

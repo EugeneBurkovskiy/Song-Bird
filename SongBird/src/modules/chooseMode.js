@@ -3,11 +3,11 @@ import generateGame from './generateGame';
 import { gameOptions } from './generateGame';
 
 function chooseMode() {
-  const gameTypeRow = document.querySelector('.game__window-row'),
-    btns = document.querySelectorAll('.game__window-button'),
+  const gameModeRow = document.querySelector('.game__mode'),
+    btns = document.querySelectorAll('.game__button'),
     blockWindow = document.querySelector('.game__blocking');
 
-  gameTypeRow.addEventListener('click', (e) => {
+  gameModeRow.addEventListener('click', (e) => {
     if (e.target && e.target.value) {
 
       btns.forEach(btn => {

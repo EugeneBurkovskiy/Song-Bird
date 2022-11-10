@@ -5,7 +5,7 @@ function checkAnswer(answer) {
   const score = document.querySelector('.game__status-score'),
     questionImg = document.querySelector('.game__question-img > img'),
     questionName = document.querySelector('.game__question-name'),
-    nextButton = document.querySelector('.game__btn');
+    nextButton = document.querySelector('.game__next');
 
   if (window.getComputedStyle(nextButton).pointerEvents === 'none') {
     gameOptions.answerStatus = false;
