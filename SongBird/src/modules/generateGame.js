@@ -1,4 +1,5 @@
 import birdsData from './birds';
+import customAudio from './audio';
 let gameOptions = {
   'score': 5,
   'level': 1,
@@ -40,6 +41,7 @@ function generateGame() {
 
   gameOptions.secretBird = gameOptions.dataArr.splice(Math.floor(Math.random() * gameOptions.dataArr.length), 1)[0];
   qustionAudio.src = gameOptions.secretBird.audio;
+  customAudio('#question-audio', '#question-player-start', '#question-player-pause', '#question-player-volume', '#question-player-duration', '#question-time-current', '#question-time-total');
 }
 
 export default generateGame;

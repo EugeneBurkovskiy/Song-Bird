@@ -3,7 +3,7 @@
   color: #ffffff;
   display: grid;
   grid-template-columns: 1fr 10fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 0fr 0fr;
   gap: 10px;
 
   &__start,
@@ -20,9 +20,9 @@
     display: none;
   }
   &__volume {
-    width: 50%;
+    width: 20%;
     grid-column: 2/3;
-    grid-row: 2/3;
+    grid-row: 3/4;
   }
   &__duration {
     grid-column: 2/4;
@@ -32,5 +32,11 @@
     object-fit: contain;
     width: 100%;
     height: 100%;
+  }
+  &__time {
+    grid-column: 2/3;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
   }
 }

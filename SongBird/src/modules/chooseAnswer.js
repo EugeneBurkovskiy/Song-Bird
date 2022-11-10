@@ -24,6 +24,10 @@ function chooseAnswer() {
                 <div class="player" id="answer-player">
                 <audio class="game__question-audio" id="answer-audio" src = ${bird.audio}></audio>
                 <input class="player__duration" id="answer-player-duration" type="range" min=0 max=100 value="0">
+                <div class="player__time">
+                  <span class="player__time-current" id="answer-time-current">00:00</span>
+                  <span class="player__time-total" id="answer-time-total">00:00</span>
+                </div>
                 <div class="player__start" id="answer-player-start"><img class="player__controls-img"
                     src="assets/icons/start.svg" alt="start">
                 </div>
@@ -39,7 +43,7 @@ function chooseAnswer() {
         `;
         }
       });
-      customAudio('#answer-audio', '#answer-player-start', '#answer-player-pause', '#answer-player-volume', '#answer-player-duration');
+      customAudio('#answer-audio', '#answer-player-start', '#answer-player-pause', '#answer-player-volume', '#answer-player-duration', '#answer-time-current', '#answer-time-total');
       checkAnswer(e.target);
     }
   });
