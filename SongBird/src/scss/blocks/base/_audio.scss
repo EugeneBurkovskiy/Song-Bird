@@ -1,0 +1,36 @@
+.player {
+  border-radius: 10px;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+
+  &__start,
+  &__pause {
+    width: 50px;
+    height: 50px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    border-radius: 100%;
+    cursor: pointer;
+    border: 3px solid $buttonColor;
+  }
+  &__pause {
+    display: none;
+  }
+  &__volume {
+    width: 50%;
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  &__duration {
+    grid-column: 2/4;
+    width: 100%;
+  }
+  &__controls-img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+}

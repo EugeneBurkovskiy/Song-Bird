@@ -1,5 +1,4 @@
-import birdsData from "./birds";
-
+import birdsData from './birds';
 let gameOptions = {
   'score': 5,
   'level': 1,

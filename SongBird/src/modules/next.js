@@ -1,5 +1,5 @@
-import generateGame from "./generateGame";
-import { gameOptions } from "./generateGame";
+import generateGame from './generateGame';
+import { gameOptions } from './generateGame';
 
 function nextLvl() {
   const nextButton = document.querySelector('.game__next');

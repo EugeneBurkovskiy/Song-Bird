@@ -1,4 +1,4 @@
-import { gameOptions } from "./generateGame";
+import { gameOptions } from './generateGame';
 
 
 function checkAnswer(answer) {

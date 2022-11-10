@@ -64,7 +64,17 @@
           <div class="game__question-info">
             <div class="game__question-name">***</div>
             <hr class="game__question-divider">
-            <audio class="game__question-audio" src="assets/audio/btnsound.mp3" controls></audio>
+            <div class="player" id="question-player">
+              <audio class="game__question-audio" id="question-audio" src="assets/audio/btnsound.mp3"></audio>
+              <input class="player__duration" id="question-player-duration" type="range" min=0 max=100 value="0">
+              <div class="player__start" id="question-player-start"><img class="player__controls-img"
+                  src="assets/icons/start.svg" alt="start">
+              </div>
+              <div class="player__pause" id="question-player-pause"><img class="player__controls-img"
+                  src="assets/icons/pause.svg" alt="pause">
+              </div>
+              <input class="player__volume" id="question-player-volume" type="range" min=0 max=100 value="100">
+            </div>
           </div>
         </div>
         <ul class="game__answer">
@@ -77,7 +87,6 @@
         </ul>
         <div class="game__about">
           <div class="game__about-block">Послушайте аудио и выберите птицу</div>
-
           <div class="game__about-wrapper">
             <div class="game__about-img"><img src="assets/img/incognito.png" alt="incognito"></div>
             <div class="game__about-info">
@@ -85,7 +94,17 @@
               <hr class="game__about-divider">
               <div class="game__about-subname">???</div>
               <hr class="game__about-divider">
-              <audio class="game__about-audio" src="assets/audio/btnsound.mp3" controls></audio>
+              <div class="player" id="answer-player">
+                <audio class="game__question-audio" id="answer-audio" src=""></audio>
+                <input class="player__duration" id="answer-player-duration" type="range" min=0 max=100 value="0">
+                <div class="player__start" id="answer-player-start"><img class="player__controls-img"
+                    src="assets/icons/start.svg" alt="start">
+                </div>
+                <div class="player__pause" id="answer-player-pause"><img class="player__controls-img"
+                    src="assets/icons/pause.svg" alt="pause">
+                </div>
+                <input class="player__volume" id="answer-player-volume" type="range" min=0 max=100 value="100">
+              </div>
             </div>
             <div class="game__about-descr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus, pariatur!
             </div>
