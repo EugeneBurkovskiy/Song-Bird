@@ -1,18 +1,19 @@
 import birdsData from './birds';
-import { gameMode } from './chooseMode';
+import { gameOptions } from './generateGame';
 import checkAnswer from './checkAnswer';
 
 function chooseAnswer() {
   const answerRow = document.querySelector('.game__answer'),
-    aboutBlock = document.querySelector('.game__about');
+    aboutSection = document.querySelector('.game__about-wrapper'),
+    aboutBlock = document.querySelector('.game__about-block');
 
   answerRow.addEventListener('click', (e) => {
-    if (e.target && (e.currentTarget === answerRow || e.target.classList.contains('game__answer-text'))) {
-
-      birdsData[gameMode - 1].forEach(bird => {
+    if (e.target && e.target.classList.contains('game__answer-item')) {
+      aboutBlock.style.top = '-100%';
+      birdsData[gameOptions.gameMode - 1].forEach(bird => {
 
         if (bird.name === e.target.textContent) {
-          aboutBlock.innerHTML = `
+          aboutSection.innerHTML = `
       <div class="game__about-img"><img src=${bird.image} alt="incognito"></div>
             <div class="game__about-info">
               <div class="game__about-name">${bird.name}</div>
