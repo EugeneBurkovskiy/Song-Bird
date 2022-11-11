@@ -41,7 +41,8 @@ function generateGame() {
 
   gameOptions.secretBird = gameOptions.dataArr.splice(Math.floor(Math.random() * gameOptions.dataArr.length), 1)[0];
   qustionAudio.src = gameOptions.secretBird.audio;
-  customAudio('#question-audio', '#question-player-start', '#question-player-pause', '#question-player-volume', '#question-player-duration', '#question-time-current', '#question-time-total');
+  customAudio('#question-audio', '#question-player-start', '#question-player-pause', '#question-player-volume',
+    '#question-player-duration', '#question-time-current', '#question-time-total', '#question-volume-true', '#question-volume-false');
 }
 
 export default generateGame;

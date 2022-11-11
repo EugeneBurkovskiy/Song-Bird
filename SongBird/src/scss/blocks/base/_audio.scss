@@ -15,6 +15,7 @@
     border-radius: 100%;
     cursor: pointer;
     border: 3px solid $buttonColor;
+    justify-self: center;
   }
   &__pause {
     display: none;
@@ -23,10 +24,87 @@
     width: 20%;
     grid-column: 2/3;
     grid-row: 3/4;
+    align-self: center;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20%;
+    height: 5px;
+    background: #d3d3d3;
+    border-radius: 10px;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      background: $buttonColor;
+      border-radius: 100%;
+      cursor: pointer;
+    }
+
+    &::-moz-range-thumb {
+      width: 15px;
+      height: 15px;
+      background: $buttonColor;
+      border-radius: 100%;
+      cursor: pointer;
+    }
+
+    &-true {
+      grid-column: 1/2;
+      grid-row: 3/4;
+      justify-self: end;
+    }
+    &-false {
+      grid-column: 1/2;
+      grid-row: 3/4;
+      justify-self: end;
+      display: none;
+    }
   }
   &__duration {
     grid-column: 2/4;
+    align-self: center;
+    -webkit-appearance: none;
+    appearance: none;
     width: 100%;
+    height: 10px;
+    background: #d3d3d3;
+    border-radius: 10px;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      background: $buttonColor;
+      border-radius: 100%;
+      cursor: pointer;
+    }
+
+    &::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      background: $buttonColor;
+      border-radius: 100%;
+      cursor: pointer;
+    }
   }
   &__controls-img {
     object-fit: contain;

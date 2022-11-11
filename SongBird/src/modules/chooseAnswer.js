@@ -34,7 +34,9 @@ function chooseAnswer() {
                 <div class="player__pause" id="answer-player-pause"><img class="player__controls-img"
                     src="assets/icons/pause.svg" alt="pause">
                 </div>
-                <input class="player__volume" id="answer-player-volume" type="range" min=0 max=100 value="100">
+                <img class="player__volume-true" id="answer-volume-true" src="assets/icons/volume.svg" alt="volume">
+                <img class="player__volume-false" id="answer-volume-false" src="assets/icons/mute.svg" alt="mute">
+                <input class="player__volume" id="answer-player-volume" type="range" min=0 max=100 value="50">
               </div>
             </div>
             </div>
@@ -43,7 +45,8 @@ function chooseAnswer() {
         `;
         }
       });
-      customAudio('#answer-audio', '#answer-player-start', '#answer-player-pause', '#answer-player-volume', '#answer-player-duration', '#answer-time-current', '#answer-time-total');
+      customAudio('#answer-audio', '#answer-player-start', '#answer-player-pause', '#answer-player-volume',
+        '#answer-player-duration', '#answer-time-current', '#answer-time-total', '#answer-volume-true', '#answer-volume-false');
       checkAnswer(e.target);
     }
   });

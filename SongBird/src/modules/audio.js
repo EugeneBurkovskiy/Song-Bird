@@ -1,11 +1,14 @@
-function customAudio(audioSelector, startSelector, pauseSelector, volumeSelector, progressSelector, currentTime, totalTime) {
+function customAudio(audioSelector, startSelector, pauseSelector, volumeSelector, progressSelector, currentTime, totalTime, volumeTrue, volumeFalse) {
   const audio = document.querySelector(audioSelector),
     startBtn = document.querySelector(startSelector),
     pauseBtn = document.querySelector(pauseSelector),
     volumeBar = document.querySelector(volumeSelector),
     progressBar = document.querySelector(progressSelector),
     currentTimeText = document.querySelector(currentTime),
-    totalTimeText = document.querySelector(totalTime);
+    totalTimeText = document.querySelector(totalTime),
+    audioIconTrue = document.querySelector(volumeTrue),
+    audioIconFalse = document.querySelector(volumeFalse);
+
 
   audio.ontimeupdate = progress;
 
@@ -25,6 +28,15 @@ function customAudio(audioSelector, startSelector, pauseSelector, volumeSelector
   volumeBar.addEventListener('input', () => {
     let volumeStatus = volumeBar.value;
     audio.volume = volumeStatus / volumeBar.max;
+
+    if (volumeBar.value < 1) {
+      audioIconTrue.style.display = 'none';
+      audioIconFalse.style.display = 'block';
+    } else {
+      audioIconFalse.style.display = 'none';
+      audioIconTrue.style.display = 'block';
+    }
+
   });
 
   progressBar.addEventListener('input', () => {
