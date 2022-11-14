@@ -29,13 +29,13 @@ function chooseAnswer() {
                   <span class="player__time-total" id="answer-time-total">00:00</span>
                 </div>
                 <div class="player__start" id="answer-player-start"><img class="player__controls-img"
-                    src="assets/icons/start.svg" alt="start">
+                    src="assets/img/start.svg" alt="start">
                 </div>
                 <div class="player__pause" id="answer-player-pause"><img class="player__controls-img"
-                    src="assets/icons/pause.svg" alt="pause">
+                    src="assets/img/pause.svg" alt="pause">
                 </div>
-                <img class="player__volume-true" id="answer-volume-true" src="assets/icons/volume.svg" alt="volume">
-                <img class="player__volume-false" id="answer-volume-false" src="assets/icons/mute.svg" alt="mute">
+                <img class="player__volume-true" id="answer-volume-true" src="assets/img/volume.svg" alt="volume">
+                <img class="player__volume-false" id="answer-volume-false" src="assets/img/mute.svg" alt="mute">
                 <input class="player__volume" id="answer-player-volume" type="range" min=0 max=100 value="50">
               </div>
             </div>

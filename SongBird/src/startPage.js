@@ -1,1 +1,2 @@
+
 import './scss/indexStyle.scss';

@@ -10,15 +10,15 @@ const isProd = !isDev;
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  mode: 'production',
   entry: {
     main: './index.js',
     startPage: './startPage.js',
-    // results: './results.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
     filename: '[name].[contenthash].js',
+    assetModuleFilename: 'assets/[name][ext]'
   },
   optimization: {
     minimize: !isDev,
@@ -34,41 +34,43 @@ module.exports = {
       template: './index.html',
       chunks: ['startPage'],
     }),
-    // new HtmlWebpackPlugin({
-    //   filename: 'results.html',
-    //   template: './results.html',
-    //   chunks: ['results'],
-    // }),
     new HtmlWebpackPlugin({
       filename: 'gamePage.html',
       template: './gamePage.html',
       chunks: ['main'],
     }),
-    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, 'src/assets'),
-          to: path.resolve(__dirname, 'dist/assets'),
-          noErrorOnMissing: true,
-        },
-      ]
-    })
   ],
   module: {
     rules: [
       {
+        test: /\.html$/,
+        loader: 'html-loader' //MiniCssExtractPlugin.loader
+      },
+      {
         test: /\.(sa|sc|c)ss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader', 'postcss-loader'] //MiniCssExtractPlugin.loader
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'] //MiniCssExtractPlugin.loader
       },
       {
         test: /\.(png|jpg|svg|gif)$/,
-        use: ['file-loader']
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/img/[name][ext]'
+        }
+      },
+      {
+        test: /\.(ttf|woff|woff2|eot)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/fonts/[name][ext]'
+        }
       },
       {
         test: /\.mp3$/,
-        use: 'file-loader'
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/audio/[name][ext]'
+        }
       },
       {
         test: /\.m?js$/,
@@ -79,11 +81,7 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
-      }
-      // {
-      //   test: /\.(ttf|woff|woff2|eot)$/,
-      //   use: ['file-loader']
-      // }
+      },
     ],
   }
 };

@@ -1,3 +1,4 @@
+import './gamePage.html';
 import './scss/indexStyle.scss';
 import chooseMode from './modules/chooseMode';
 import chooseAnswer from './modules/chooseAnswer';

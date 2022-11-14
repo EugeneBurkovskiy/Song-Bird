@@ -10,7 +10,6 @@ let gameOptions = {
 };
 
 function generateGame() {
-
   const answerBlock = document.querySelector('.game__answer'),
     qustionAudio = document.querySelector('.game__question-audio'),
     aboutBlock = document.querySelector('.game__about-block'),
@@ -19,7 +18,7 @@ function generateGame() {
     questionName = document.querySelector('.game__question-name'),
     lvlNumber = document.querySelector('.game__status-lvl');
 
-  questionImg.src = '../assets/img/incognito.png';
+  questionImg.src = 'assets/img/incognito.png';
   questionName.textContent = '***';
 
   lvlNumber.textContent = `Уровень: ${gameOptions.level}`;
