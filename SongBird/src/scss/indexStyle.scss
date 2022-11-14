@@ -1,13 +1,13 @@
 @import "blocks/base/reset";
 @import "blocks/base/variables";
 @import "blocks/base/fonts";
+@import "blocks/base/button";
 @import "blocks/header";
 @import "blocks/footer";
 @import "blocks/startPage";
 @import "blocks/gamePage";
 @import "blocks/base/audio";
 @import "blocks/results";
-
 body {
   -webkit-box-shadow: inset 0px 0px 16px 8px rgba(255, 255, 255, 0.12);
   -moz-box-shadow: inset 0px 0px 16px 8px rgba(255, 255, 255, 0.12);

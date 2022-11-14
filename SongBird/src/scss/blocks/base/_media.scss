@@ -47,6 +47,13 @@
       grid-row: 7/8;
     }
   }
+  .result-popup__window {
+    width: 70%;
+    font-size: 20px;
+  }
+  .result-popup__button {
+    font-size: 18px;
+  }
 }
 @media all and (max-width: 650px) {
   .game__question {
@@ -88,6 +95,7 @@
   }
   .results__window {
     font-size: 25px;
+    align-items: center;
   }
 }
 @media all and (max-width: 320px) {

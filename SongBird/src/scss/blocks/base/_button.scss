@@ -1,0 +1,18 @@
+.button {
+  background-color: $buttonColor;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15%;
+  cursor: pointer;
+  transition: all 1s;
+  position: relative;
+  color: $fontColor;
+  font-size: 25px;
+
+  &:hover {
+    background-color: #229182;
+    transform: scale(1.05);
+  }
+}

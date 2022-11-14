@@ -11,7 +11,12 @@
     display: flex;
     text-align: center;
     justify-content: center;
+    align-items: center;
     padding: 20px;
     color: $fontColor;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
   }
 }
