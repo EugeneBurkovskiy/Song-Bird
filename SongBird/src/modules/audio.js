@@ -9,7 +9,8 @@ function customAudio(audioSelector, startSelector, pauseSelector, volumeSelector
     audioIconTrue = document.querySelector(volumeTrue),
     audioIconFalse = document.querySelector(volumeFalse);
 
-
+  pauseBtn.style.display = 'none';
+  startBtn.style.display = 'block';
   audio.ontimeupdate = progress;
 
   startBtn.addEventListener('click', () => {
@@ -46,13 +47,18 @@ function customAudio(audioSelector, startSelector, pauseSelector, volumeSelector
   function progress() {
     progressBar.value = progressBar.max * audio.currentTime / audio.duration;
     timeConverter(audio.currentTime, currentTimeText);
+    if (audio.currentTime === audio.duration) {
+      pauseBtn.style.display = 'none';
+      startBtn.style.display = 'block';
+    }
   }
 
   function timeConverter(time, cell) {
     cell.textContent = '';
     let seconds = Math.floor(time % 60),
-      minutes = Math.floor(seconds / 60);
+      minutes = Math.floor((time / 60) % 60);
     let timeArr = [minutes, seconds];
+    console.log(time);
     timeArr = timeArr.map(item => {
       if (item < 10) {
         item = '0' + item;
@@ -61,8 +67,8 @@ function customAudio(audioSelector, startSelector, pauseSelector, volumeSelector
       }
       return item;
     });
+    console.log(timeArr);
     cell.textContent = timeArr[0] + ':' + timeArr[1];
   }
-
 }
 export default customAudio;
