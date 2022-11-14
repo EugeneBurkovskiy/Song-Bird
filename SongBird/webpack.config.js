@@ -13,6 +13,7 @@ module.exports = {
   entry: {
     main: './index.js',
     startPage: './startPage.js',
+    results: './results.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -38,6 +39,11 @@ module.exports = {
       filename: 'gamePage.html',
       template: './gamePage.html',
       chunks: ['main'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'results.html',
+      template: './results.html',
+      chunks: ['results'],
     }),
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
   ],

@@ -19,6 +19,8 @@ function chooseMode() {
       e.target.style.pointerEvents = 'none';
       blockWindow.style.top = '-100%';
       gameOptions.gameMode = e.target.value;
+      gameOptions.level = 1;
+      gameOptions.score = 5;
 
       gameOptions.dataArr = birdsData[gameOptions.gameMode - 1].slice(0);
       generateGame();

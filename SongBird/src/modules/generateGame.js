@@ -13,15 +13,17 @@ function generateGame() {
   const answerBlock = document.querySelector('.game__answer'),
     qustionAudio = document.querySelector('.game__question-audio'),
     aboutBlock = document.querySelector('.game__about-block'),
-    nextButton = document.querySelector('.game__next'),
+    nextButton = document.querySelector('.game__next>a'),
     questionImg = document.querySelector('.game__question-img > img'),
     questionName = document.querySelector('.game__question-name'),
-    lvlNumber = document.querySelector('.game__status-lvl');
+    lvlNumber = document.querySelector('.game__status-lvl'),
+    gameScore = document.querySelector('.game__status-score');
 
   questionImg.src = 'assets/img/incognito.png';
   questionName.textContent = '***';
 
   lvlNumber.textContent = `Уровень: ${gameOptions.level}`;
+  gameScore.textContent = `Очки: ${gameOptions.score - 5}`;
   aboutBlock.style.top = '0';
 
   if (gameOptions.dataArr.length === 1) {

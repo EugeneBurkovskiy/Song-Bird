@@ -562,7 +562,5 @@ body {
 
 @media all and (max-width: 320px) {
   .container {
-    width: 85%; }
-  .game__logo {
-    font-size: 90px; } }
+    width: 85%; } }
 

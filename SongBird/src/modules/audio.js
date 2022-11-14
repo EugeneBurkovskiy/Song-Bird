@@ -12,7 +12,6 @@ function customAudio(audioSelector, startSelector, pauseSelector, volumeSelector
   pauseBtn.style.display = 'none';
   startBtn.style.display = 'block';
   audio.ontimeupdate = progress;
-
   startBtn.addEventListener('click', () => {
     audio.play();
     timeConverter(audio.duration, totalTimeText);
@@ -58,7 +57,6 @@ function customAudio(audioSelector, startSelector, pauseSelector, volumeSelector
     let seconds = Math.floor(time % 60),
       minutes = Math.floor((time / 60) % 60);
     let timeArr = [minutes, seconds];
-    console.log(time);
     timeArr = timeArr.map(item => {
       if (item < 10) {
         item = '0' + item;
@@ -67,7 +65,6 @@ function customAudio(audioSelector, startSelector, pauseSelector, volumeSelector
       }
       return item;
     });
-    console.log(timeArr);
     cell.textContent = timeArr[0] + ':' + timeArr[1];
   }
 }
