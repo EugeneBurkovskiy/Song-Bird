@@ -13,7 +13,8 @@ module.exports = {
   entry: {
     main: './index.js',
     startPage: './startPage.js',
-    results: './results.js'
+    results: './results.js',
+    gallery: './gallery.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -44,6 +45,11 @@ module.exports = {
       filename: 'results.html',
       template: './results.html',
       chunks: ['results'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'gallery.html',
+      template: './gallery.html',
+      chunks: ['gallery'],
     }),
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
   ],

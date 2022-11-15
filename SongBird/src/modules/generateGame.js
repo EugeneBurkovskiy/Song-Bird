@@ -1,5 +1,6 @@
 import birdsData from './birds';
 import customAudio from './audio';
+
 let gameOptions = {
   'score': 5,
   'level': 1,
@@ -27,7 +28,7 @@ function generateGame() {
   aboutBlock.style.top = '0';
 
   if (gameOptions.dataArr.length === 1) {
-    nextButton.textContent = 'Finish';
+    nextButton.textContent = 'Конец';
   }
   nextButton.style.cssText = '';
 
