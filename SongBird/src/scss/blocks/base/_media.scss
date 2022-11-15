@@ -13,6 +13,13 @@
   .container {
     width: 85%;
   }
+  .rules {
+    &__window {
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%);
+    }
+  }
   .header__button {
     font-size: 14px;
   }
