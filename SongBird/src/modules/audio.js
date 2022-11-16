@@ -45,6 +45,20 @@ function customAudio(audioSelector, startSelector, pauseSelector, volumeSelector
 
   });
 
+  audioIconTrue.addEventListener('click', () => {
+    audioIconTrue.style.display = 'none';
+    audioIconFalse.style.display = 'block';
+    audio.volume = 0;
+    volumeBar.value = 0;
+  });
+
+  audioIconFalse.addEventListener('click', () => {
+    audioIconFalse.style.display = 'none';
+    audioIconTrue.style.display = 'block';
+    audio.volume = 1;
+    volumeBar.value = 100;
+  });
+
   progressBar.addEventListener('input', () => {
     audio.currentTime = progressBar.value * audio.duration / progressBar.max;
   });

@@ -62,12 +62,14 @@
       grid-column: 1/2;
       grid-row: 3/4;
       justify-self: end;
+      cursor: pointer;
     }
     &-false {
       grid-column: 1/2;
       grid-row: 3/4;
       justify-self: end;
       display: none;
+      cursor: pointer;
     }
   }
   &__duration {
