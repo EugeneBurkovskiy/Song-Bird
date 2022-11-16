@@ -26,6 +26,7 @@ function chooseMode() {
       generateGame();
     }
   });
+  btns[0].click();
 }
 
 export default chooseMode;

@@ -9,12 +9,18 @@ function customAudio(audioSelector, startSelector, pauseSelector, volumeSelector
     audioIconTrue = document.querySelector(volumeTrue),
     audioIconFalse = document.querySelector(volumeFalse);
 
+
+  audio.addEventListener('loadedmetadata', () => {
+    timeConverter(audio.duration, totalTimeText);
+    progressBar.value = 0;
+  });
+
   pauseBtn.style.display = 'none';
   startBtn.style.display = 'block';
   audio.ontimeupdate = progress;
+
   startBtn.addEventListener('click', () => {
     audio.play();
-    timeConverter(audio.duration, totalTimeText);
     pauseBtn.style.display = 'block';
     startBtn.style.display = 'none';
   });

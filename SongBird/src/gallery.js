@@ -10,7 +10,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   mode.addEventListener('click', (e) => {
     if (e.target && e.target.value) {
-
       btns.forEach(btn => {
         btn.style.cssText = ``;
         btn.style.pointerEvents = '';
@@ -61,4 +60,5 @@ window.addEventListener('DOMContentLoaded', () => {
       e.target.style.pointerEvents = 'none';
     }
   });
+  btns[0].click();
 });
