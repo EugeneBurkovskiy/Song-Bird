@@ -25,10 +25,12 @@ function checkAnswer(answer) {
       audioPauseBtn.forEach(item => { item.click(); });
       audioAnswerTrue.play();
 
-    } else {
+    } else if (!answer.classList.contains('game__answer-item_false')) {
+
       answer.classList.add('game__answer-item_false');
       audioAnswerFalse.play();
       gameOptions.score--;
+
     }
   }
 }
