@@ -19,7 +19,6 @@ function nextLvl() {
   function saveToStorage() {
     let resultsArr = [];
     let resultItem = JSON.parse(localStorage.getItem('result'));
-    console.log(resultItem);
     if (resultItem) {
       resultsArr = resultItem;
       resultsArr.push(gameOptions);

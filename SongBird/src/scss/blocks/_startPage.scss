@@ -12,19 +12,32 @@
   transition: all 1s;
 }
 .rules {
+  display: none;
+  justify-self: self-start;
   width: 100%;
-  height: 400px;
-  position: relative;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 15;
   &__window {
-    position: absolute;
-    right: 0px;
-    top: 0;
-    width: 300px;
-    height: 250px;
-    background-color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    color: $fontColor;
+    max-width: 400px;
+    height: 50vh;
+    background-color: $backgroundWindows;
     padding: 20px;
     border-radius: 10px;
     font-size: 20px;
     text-align: justify;
+    &-close {
+      cursor: pointer;
+      font-size: 30px;
+      position: absolute;
+      right: 10px;
+      top: 0;
+    }
   }
 }
