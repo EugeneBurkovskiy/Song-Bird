@@ -30,4 +30,17 @@ body {
   z-index: 2;
 }
 
+.FadeIn {
+  animation-name: FadeIn;
+  animation-duration: 1s;
+}
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @import "blocks/base/media";

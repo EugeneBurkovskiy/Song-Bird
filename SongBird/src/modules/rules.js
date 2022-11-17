@@ -6,11 +6,13 @@ function showRules() {
   rulesBtn.addEventListener('click', (e) => {
     e.preventDefault();
     window.style.display = 'block';
+    window.classList.add('FadeIn');
   });
 
   window.addEventListener('click', (e) => {
     if (e.target && (e.target === window || e.target === closeBtn)) {
       window.style.display = 'none';
+      window.classList.remove('FadeIn');
     }
   });
 }

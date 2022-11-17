@@ -258,17 +258,6 @@
       transform: scale(1.005);
     }
   }
-
-  @keyframes flipInX {
-    0% {
-      transform: perspective(400px) rotateX(90deg);
-      opacity: 0;
-    }
-    100% {
-      transform: perspective(400px) rotateX(0deg);
-      opacity: 1;
-    }
-  }
 }
 .player {
   width: 100%;
