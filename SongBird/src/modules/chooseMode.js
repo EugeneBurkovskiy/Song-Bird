@@ -1,6 +1,6 @@
-import birdsData from './birds';
 import generateGame from './generateGame';
 import { gameOptions } from './generateGame';
+
 
 function chooseMode() {
   const gameModeRow = document.querySelector('.game__mode'),
@@ -22,7 +22,7 @@ function chooseMode() {
       gameOptions.level = 1;
       gameOptions.score = 5;
 
-      gameOptions.dataArr = birdsData[gameOptions.gameMode - 1].slice(0);
+      gameOptions.dataArr = gameOptions.birdsData[gameOptions.gameMode - 1].slice(0);
       generateGame();
     }
   });

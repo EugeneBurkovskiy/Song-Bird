@@ -1,5 +1,7 @@
 import birdsData from './birds';
+import birdsDataEn from './birds-en';
 import customAudio from './audio';
+import { dataTranslate } from './changeLang/changeLang(gamePage)';
 
 let gameOptions = {
   'score': 5,
@@ -7,7 +9,8 @@ let gameOptions = {
   'gameMode': 1,
   'dataArr': [],
   'secretBird': {},
-  'answerStatus': false
+  'answerStatus': false,
+  'birdsData': dataTranslate.lang === 'en' ? birdsDataEn : birdsData
 };
 
 function generateGame() {
@@ -23,18 +26,19 @@ function generateGame() {
   questionImg.src = 'assets/img/incognito.png';
   questionName.textContent = '***';
 
-  lvlNumber.textContent = `Уровень: ${gameOptions.level}`;
-  gameScore.textContent = `Очки: ${gameOptions.score - 5}`;
+  lvlNumber.textContent = `${dataTranslate[dataTranslate.lang].lvlName} ${gameOptions.level}`;
+  gameScore.textContent = `${dataTranslate[dataTranslate.lang].scoreName} ${gameOptions.score - 5}`;
+
   aboutBlock.style.top = '0';
 
   if (gameOptions.dataArr.length === 1) {
-    nextButton.textContent = 'Конец';
+    nextButton.textContent = `${dataTranslate[dataTranslate.lang].finishBtn}`;
   }
   nextButton.style.cssText = '';
 
   answerBlock.innerHTML = '';
 
-  birdsData[gameOptions.gameMode - 1].forEach(item => {
+  gameOptions.birdsData[gameOptions.gameMode - 1].forEach(item => {
     const answerBtn = document.createElement('li');
     answerBtn.classList.add('game__answer-item');
     answerBtn.innerHTML = `${item.name}`;

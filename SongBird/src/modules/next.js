@@ -4,6 +4,7 @@ import { popupOpen } from './popup';
 
 function nextLvl() {
   const nextButton = document.querySelector('.game__next>a');
+
   nextButton.addEventListener('click', (e) => {
     e.preventDefault();
     if (gameOptions.dataArr.length !== 0) {

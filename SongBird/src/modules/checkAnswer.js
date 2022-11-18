@@ -1,4 +1,5 @@
 import { gameOptions } from './generateGame';
+import { dataTranslate } from './changeLang/changeLang(gamePage)';
 
 function checkAnswer(answer) {
   const score = document.querySelector('.game__status-score'),
@@ -17,7 +18,7 @@ function checkAnswer(answer) {
     if (answer.textContent === gameOptions.secretBird.name) {
 
       answer.classList.add('game__answer-item_true');
-      score.textContent = `Очки: ${gameOptions.score}`;
+      score.textContent = `${dataTranslate[dataTranslate.lang].scoreName} ${gameOptions.score}`;
       questionImg.src = gameOptions.secretBird.image;
       questionName.textContent = gameOptions.secretBird.name;
       nextButton.style.cssText = 'pointer-events: auto; background-color: #2baa27;';

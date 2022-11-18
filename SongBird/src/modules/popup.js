@@ -11,6 +11,7 @@ function popupOpen() {
     popupScore = document.querySelector('.result-popup__score'),
     audioVictory = document.querySelector('.game__ansnwer-victory'),
     restartBtn = document.querySelector('.result-popup__button');
+
   popupWindow.style.display = 'flex';
   popupWindow.classList.add('FadeIn');
   if (gameOptions.score === 30) {

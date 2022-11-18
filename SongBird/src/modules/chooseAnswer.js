@@ -1,4 +1,3 @@
-import birdsData from './birds';
 import { gameOptions } from './generateGame';
 import checkAnswer from './checkAnswer';
 import customAudio from './audio';
@@ -11,7 +10,7 @@ function chooseAnswer() {
   answerRow.addEventListener('click', (e) => {
     if (e.target && e.target.classList.contains('game__answer-item')) {
       aboutBlock.style.top = '-100%';
-      birdsData[gameOptions.gameMode - 1].forEach(bird => {
+      gameOptions.birdsData[gameOptions.gameMode - 1].forEach(bird => {
 
         if (bird.name === e.target.textContent) {
           aboutSection.innerHTML = `
