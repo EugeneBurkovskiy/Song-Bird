@@ -1,4 +1,5 @@
 import { gameOptions } from './generateGame';
+import { dataTranslate } from './changeLang/changeLang(gamePage)';
 
 function popupClose() {
   document.querySelectorAll('.result-popup__button').forEach(item => {
@@ -16,10 +17,10 @@ function popupOpen() {
   popupWindow.classList.add('FadeIn');
   if (gameOptions.score === 30) {
     audioVictory.play();
-    popupScore.textContent = `Вы набрали максимальное количество очков!`;
+    popupScore.textContent = `${dataTranslate[dataTranslate.lang].winTitle}`;
     restartBtn.style.display = 'none';
   } else {
-    popupScore.textContent = `Ваш результат: ${gameOptions.score}/30`;
+    popupScore.textContent = `${dataTranslate[dataTranslate.lang].scoreTitle} ${gameOptions.score}/30`;
   }
 }
 

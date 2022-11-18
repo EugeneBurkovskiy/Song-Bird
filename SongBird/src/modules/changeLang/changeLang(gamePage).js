@@ -9,7 +9,11 @@ const dataTranslate = {
     scoreName: 'Очки:',
     shield: 'Послушайте аудио и выберите птицу',
     nextBtn: 'Дальше',
-    finishBtn: 'Конец'
+    finishBtn: 'Конец',
+    scoreTitle: 'Ваш результат:',
+    playAgainBtn: 'Еще раз',
+    resultPageBtn: 'Статистика',
+    winTitle: 'Вы набрали максимальное количество очков!'
   },
   en: {
     mainPage: '⇦ Main page',
@@ -20,7 +24,11 @@ const dataTranslate = {
     scoreName: 'Score',
     shield: 'Listen to the audio and choose a bird',
     nextBtn: 'Next',
-    finishBtn: 'Final'
+    finishBtn: 'Final',
+    scoreTitle: 'Your result:',
+    playAgainBtn: 'Again',
+    resultPageBtn: 'Statistic',
+    winTitle: 'You have scored the maximum number of points!'
   }
 };
 
@@ -31,7 +39,9 @@ function changeLang() {
     gameLvl = document.querySelector('.game__status-lvl'),
     gameScore = document.querySelector('.game__status-score'),
     nextBtn = document.querySelector('.game__next>a'),
-    aboutShield = document.querySelector('.game__about-block');
+    aboutShield = document.querySelector('.game__about-block'),
+    popupScore = document.querySelector('.result-popup__score'),
+    popupBtns = document.querySelectorAll('.result-popup__button');
 
   let lang = dataTranslate.lang;
 
@@ -46,6 +56,9 @@ function changeLang() {
   gameScore.textContent = dataTranslate[lang].scoreName;
   nextBtn.textContent = dataTranslate[lang].nextBtn;
   aboutShield.textContent = dataTranslate[lang].shield;
+  popupScore.textContent = dataTranslate[lang].scoreTitle;
+  popupBtns[0].textContent = dataTranslate[lang].playAgainBtn;
+  popupBtns[1].textContent = dataTranslate[lang].resultPageBtn;
 
 }
 
