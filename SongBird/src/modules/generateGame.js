@@ -1,5 +1,5 @@
-import birdsData from './birds';
-import birdsDataEn from './birds-en';
+import birdsData from './data/birds';
+import birdsDataEn from './data/birds-en';
 import customAudio from './audio';
 import { dataTranslate } from './changeLang/changeLang(gamePage)';
 

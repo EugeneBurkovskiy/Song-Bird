@@ -25,18 +25,25 @@ const dataTranslate = {
 function changeLang() {
   const navBtns = document.querySelectorAll('.header__button'),
     gameInfo = document.querySelector('.rules__window-text'),
-    changeBtn = document.querySelectorAll('.header__changelang');
+    changeBtn = document.querySelectorAll('.header__changelang-button');
 
   let lang = JSON.parse(localStorage.getItem('lang'));
 
-  changeBtn.forEach(item => {
+  changeBtn.forEach((item, i) => {
     item.addEventListener('click', () => {
+
+      changeBtn.forEach(item => {
+        item.style.cssText = '';
+      });
+
       if (item.textContent === 'Ru') {
+        item.style.cssText = 'background-color: #165c52';
         localStorage.setItem('lang', JSON.stringify(item.textContent));
         navBtns[0].innerHTML = dataTranslate.ru.startGameBtn;
         navBtns[1].innerHTML = dataTranslate.ru.galleryBtn;
         gameInfo.innerHTML = dataTranslate.ru.rules;
       } else if (item.textContent === 'En') {
+        item.style.cssText = 'background-color: #165c52';
         localStorage.setItem('lang', JSON.stringify(item.textContent));
         navBtns[0].innerHTML = dataTranslate.en.startGameBtn;
         navBtns[1].innerHTML = dataTranslate.en.galleryBtn;

@@ -10,13 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./modules/changeLang/changeLang(results).js":
+/*!***************************************************!*\
+  !*** ./modules/changeLang/changeLang(results).js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"dataTranslate\": () => (/* binding */ dataTranslate),\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar dataTranslate = {\n  lang: JSON.parse(localStorage.getItem('lang')).toLowerCase(),\n  ru: {\n    startGameBtn: '⇦ На главную',\n    galleryBtn: 'Галлерея ⇨',\n    score: 'очков'\n  },\n  en: {\n    startGameBtn: '⇦ Main page',\n    galleryBtn: 'Start page ⇨',\n    score: 'score'\n  }\n};\nfunction changeLang() {\n  var navBtns = document.querySelectorAll('.header__button');\n  navBtns[0].innerHTML = dataTranslate[dataTranslate.lang].startGameBtn;\n  navBtns[1].innerHTML = dataTranslate[dataTranslate.lang].galleryBtn;\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (changeLang);\n\n\n//# sourceURL=webpack:///./modules/changeLang/changeLang(results).js?");
+
+/***/ }),
+
 /***/ "./results.js":
 /*!********************!*\
   !*** ./results.js ***!
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _results_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./results.html */ \"./results.html\");\n/* harmony import */ var _scss_indexStyle_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scss/indexStyle.scss */ \"./scss/indexStyle.scss\");\n\n\nwindow.addEventListener('DOMContentLoaded', function () {\n  var list = document.querySelector('.results__list'),\n    resultsArr = JSON.parse(localStorage.getItem('result'));\n  list.innerHTML = '';\n  resultsArr.forEach(function (item, i) {\n    list.innerHTML += \"<li class=\\\"results__item\\\">\".concat(i + 1, \". \").concat(item.score, \" \\u043E\\u0447\\u043A\\u043E\\u0432</li>\");\n  });\n});\n\n//# sourceURL=webpack:///./results.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _results_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./results.html */ \"./results.html\");\n/* harmony import */ var _scss_indexStyle_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scss/indexStyle.scss */ \"./scss/indexStyle.scss\");\n/* harmony import */ var _modules_changeLang_changeLang_results___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/changeLang/changeLang(results) */ \"./modules/changeLang/changeLang(results).js\");\n\n\n\n\nwindow.addEventListener('DOMContentLoaded', function () {\n  (0,_modules_changeLang_changeLang_results___WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n  var list = document.querySelector('.results__list'),\n    resultsArr = JSON.parse(localStorage.getItem('result'));\n  list.innerHTML = '';\n  resultsArr.forEach(function (item, i) {\n    list.innerHTML += \"<li class=\\\"results__item\\\">\".concat(i + 1, \". \").concat(item.score, \" \").concat(_modules_changeLang_changeLang_results___WEBPACK_IMPORTED_MODULE_2__.dataTranslate[_modules_changeLang_changeLang_results___WEBPACK_IMPORTED_MODULE_2__.dataTranslate.lang].score, \"</li>\");\n  });\n});\n\n//# sourceURL=webpack:///./results.js?");
 
 /***/ }),
 

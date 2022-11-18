@@ -1,9 +1,11 @@
 import './gallery.html';
 import './scss/indexStyle.scss';
-import birdsData from './modules/birds';
+import { gameOptions } from './modules/generateGame';
 import customAudio from './modules/audio';
+import changeLang from './modules/changeLang/changeLang(gallery)';
 
 window.addEventListener('DOMContentLoaded', () => {
+  changeLang();
   const mode = document.querySelector('.gallery__mode'),
     btns = document.querySelectorAll('.gallery__button'),
     galleryRow = document.querySelector('.gallery__row');
@@ -17,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       galleryRow.innerHTML = '';
 
-      birdsData[e.target.value - 1].forEach((item, i) => {
+      gameOptions.birdsData[e.target.value - 1].forEach((item, i) => {
         const galleryItem = document.createElement('li');
         galleryItem.classList.add('gallery__item');
         galleryItem.innerHTML = `
