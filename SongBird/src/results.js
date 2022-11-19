@@ -1,7 +1,7 @@
 import './results.html';
 import './scss/indexStyle.scss';
-import changeLang from './modules/changeLang/changeLang(results)';
-import { dataTranslate } from './modules/changeLang/changeLang(results)';
+import changeLang from './modules/changeLang/changeLang';
+import { dataTranslate } from './modules/changeLang/changeLang';
 
 window.addEventListener('DOMContentLoaded', () => {
   changeLang();
@@ -9,6 +9,6 @@ window.addEventListener('DOMContentLoaded', () => {
     resultsArr = JSON.parse(localStorage.getItem('result'));
   list.innerHTML = '';
   resultsArr.forEach((item, i) => {
-    list.innerHTML += `<li class="results__item">${i + 1}. ${item.score} ${dataTranslate[dataTranslate.lang].score}</li>`;
+    list.innerHTML += `<li class="results__item">${i + 1}. ${item.score} ${dataTranslate[dataTranslate.lang].scoreName}</li>`;
   });
 });

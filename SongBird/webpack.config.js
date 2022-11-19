@@ -7,7 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
-
+console.log(isProd);
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
@@ -23,7 +23,7 @@ module.exports = {
     assetModuleFilename: 'assets/[name][ext]'
   },
   optimization: {
-    minimize: !isDev,
+    minimize: isProd,
     minimizer: [new CssMinimizerPlugin()],
   },
   devServer: {

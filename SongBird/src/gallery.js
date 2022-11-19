@@ -2,10 +2,12 @@ import './gallery.html';
 import './scss/indexStyle.scss';
 import { gameOptions } from './modules/generateGame';
 import customAudio from './modules/audio';
-import changeLang from './modules/changeLang/changeLang(gallery)';
+import changeLang from './modules/changeLang/changeLang';
 
 window.addEventListener('DOMContentLoaded', () => {
+
   changeLang();
+
   const mode = document.querySelector('.gallery__mode'),
     btns = document.querySelectorAll('.gallery__button'),
     galleryRow = document.querySelector('.gallery__row');

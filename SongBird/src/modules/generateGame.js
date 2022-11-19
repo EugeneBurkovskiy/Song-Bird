@@ -1,7 +1,7 @@
 import birdsData from './data/birds';
 import birdsDataEn from './data/birds-en';
 import customAudio from './audio';
-import { dataTranslate } from './changeLang/changeLang(gamePage)';
+import { dataTranslate } from './changeLang/changeLang';
 
 let gameOptions = {
   'score': 5,

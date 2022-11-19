@@ -1,5 +1,5 @@
 import { gameOptions } from './generateGame';
-import { dataTranslate } from './changeLang/changeLang(gamePage)';
+import { dataTranslate } from './changeLang/changeLang';
 
 function checkAnswer(answer) {
   const score = document.querySelector('.game__status-score'),

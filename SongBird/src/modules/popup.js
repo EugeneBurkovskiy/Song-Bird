@@ -1,5 +1,5 @@
 import { gameOptions } from './generateGame';
-import { dataTranslate } from './changeLang/changeLang(gamePage)';
+import { dataTranslate } from './changeLang/changeLang';
 
 function popupClose() {
   document.querySelectorAll('.result-popup__button').forEach(item => {
@@ -17,10 +17,10 @@ function popupOpen() {
   popupWindow.classList.add('FadeIn');
   if (gameOptions.score === 30) {
     audioVictory.play();
-    popupScore.textContent = `${dataTranslate[dataTranslate.lang].winTitle}`;
+    popupScore.textContent = `${dataTranslate[dataTranslate.lang].winText}`;
     restartBtn.style.display = 'none';
   } else {
-    popupScore.textContent = `${dataTranslate[dataTranslate.lang].scoreTitle} ${gameOptions.score}/30`;
+    popupScore.textContent = `${dataTranslate[dataTranslate.lang].scoreText} ${gameOptions.score}/30`;
   }
 }
 
