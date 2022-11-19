@@ -9,6 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
     resultsArr = JSON.parse(localStorage.getItem('result'));
   list.innerHTML = '';
   resultsArr.forEach((item, i) => {
-    list.innerHTML += `<li class="results__item">${i + 1}. ${item.score} ${dataTranslate[dataTranslate.lang].scoreName}</li>`;
+    let scoreName = dataTranslate[dataTranslate.lang].scoreName.toLowerCase().replace(/:/, '');
+    list.innerHTML += `<li class="results__item">${i + 1}. ${item.score} ${scoreName}</li>`;
   });
 });
