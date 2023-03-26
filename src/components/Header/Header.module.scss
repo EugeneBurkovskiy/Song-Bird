@@ -1,0 +1,16 @@
+@import "../../theme/variables";
+
+.header {
+  background-color: $headerbackground;
+  padding: 20px 0px;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title {
+    user-select: none;
+    font-size: 6rem;
+    font-family: "Kolker";
+  }
+}

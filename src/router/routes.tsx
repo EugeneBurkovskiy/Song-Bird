@@ -5,22 +5,22 @@ import Score from '../pages/Score/Score';
 import React from 'react';
 export const routes = [
   {
-    name: 'home',
+    name: 'Home',
     path: '/',
     element: <Home />,
   },
   {
-    name: 'game',
+    name: 'Game',
     path: '/game',
     element: <Game />,
   },
   {
-    name: 'score',
+    name: 'Score',
     path: '/score',
     element: <Score />,
   },
   {
-    name: 'error',
+    name: '404',
     path: '/*',
     element: <ErrorNotFound />,
   },
