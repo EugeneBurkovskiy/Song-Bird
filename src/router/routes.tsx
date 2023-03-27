@@ -2,6 +2,7 @@ import ErrorNotFound from '../pages/ErrorNotFound/ErrorNotFound';
 import Game from '../pages/Game/Game';
 import Home from '../pages/Home/Home';
 import Score from '../pages/Score/Score';
+import Gallery from '../pages/Gallery/Gallery';
 import React from 'react';
 export const routes = [
   {
@@ -18,6 +19,11 @@ export const routes = [
     name: 'Score',
     path: '/score',
     element: <Score />,
+  },
+  {
+    name: 'Gallery',
+    path: '/gallery',
+    element: <Gallery />,
   },
   {
     name: '404',
