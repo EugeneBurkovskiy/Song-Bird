@@ -1,0 +1,12 @@
+@import "../../../theme/variables";
+.link {
+  g {
+    fill: $fontColor;
+    transition: all $transitionTime;
+  }
+  &:hover {
+    g {
+      fill: $buttonHoverColor;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import Header from './components/Header/Header';
 import React from 'react';
 import Router from './router/Router';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <main>
         <Router />
       </main>
+      <Footer />
     </>
   );
 }
