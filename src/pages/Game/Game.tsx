@@ -16,11 +16,11 @@ export interface IBird {
 export default function Game() {
   return (
     <OptionsContextProvider>
-      <section className={classes.game}>
+      <article className={classes.game}>
         <Container>
           <GameMode />
         </Container>
-      </section>
+      </article>
     </OptionsContextProvider>
   );
 }

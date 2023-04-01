@@ -6,14 +6,17 @@ import { IOptionsContext, OptionsContext } from '../GameContext/GameContext';
 export default function GameMode() {
   const options = useContext<IOptionsContext>(OptionsContext);
   return (
-    <ul className={classes.categories}>
-      {options.modes.map((item) =>
-        item === options.currentMode ? (
-          <CategoryButton active={true} title={item} key={item} />
-        ) : (
-          <CategoryButton changeMode={options.setMode} title={item} key={item} />
-        )
-      )}
-    </ul>
+    <section className={classes.categories}>
+      <h2 className={classes.categories__title}>Game mode</h2>
+      <ul className={classes.categories__list}>
+        {options.modes.map((item) =>
+          item === options.currentMode ? (
+            <CategoryButton active={true} title={item} key={item} />
+          ) : (
+            <CategoryButton changeMode={options.setMode} title={item} key={item} />
+          )
+        )}
+      </ul>
+    </section>
   );
 }

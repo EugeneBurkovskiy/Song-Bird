@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import birdsData from '../../../utils/birds';
+import { BirdsContext } from '../../../context/BirdsContext';
+import React, { useContext, useState } from 'react';
 
 export interface IOptionsContext {
   currentMode: string;
   modes: string[];
   setMode?: React.Dispatch<React.SetStateAction<string>>;
 }
-
 export const OptionsContext = React.createContext({
-  currentMode: birdsData[0].category,
-  modes: [...new Set(birdsData.map((item) => item.category))],
+  currentMode: '',
+  modes: [''],
 });
 
 export default function OptionsContextProvider({ children }: { children: React.ReactNode }) {
+  const birdsData = useContext(BirdsContext);
   const [mode, setMode] = useState(birdsData[0].category);
 
   const options = {

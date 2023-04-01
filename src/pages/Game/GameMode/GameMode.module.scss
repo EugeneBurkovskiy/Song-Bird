@@ -1,11 +1,18 @@
 @import "../../../theme/variables";
 .categories {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
   background-color: $backgroundWindows;
   padding: 20px;
   width: 100%;
   border-radius: $windowBorderRadius;
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 }
