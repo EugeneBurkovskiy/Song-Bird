@@ -33,14 +33,14 @@
 }
 
 .active {
-  color: $buttonHoverColor;
+  color: $buttonActiveColor;
   &::before {
     content: "";
     display: block;
     position: absolute;
     bottom: 0;
     height: 5px;
-    background-color: $buttonHoverColor;
+    background-color: $buttonActiveColor;
     animation: underline 0.5s;
     width: 100%;
   }

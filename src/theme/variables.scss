@@ -3,6 +3,7 @@ $title-font: "Kolker", sans-serif;
 $buttonColor: #29baa7;
 $buttonHoverColor: #35f5db;
 $buttonDisableColor: #165c52;
+$buttonActiveColor: #35f5db;
 $backgroundColor: #282e33;
 $backgroundWindows: #3f4850;
 $fontColor: #ffffff;
@@ -12,3 +13,6 @@ $burgerbackground: rgb(0, 0, 0, 0.5);
 
 $transitionTime: 0.5s;
 $headerShadow: 0px 87px 233px 0px rgba(0, 0, 0, 0.7);
+
+$buttonBorderRadius: 15px;
+$windowBorderRadius: 15px;
