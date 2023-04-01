@@ -1,12 +1,12 @@
 @import "../../theme/variables";
 
 .footer {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  padding: 20px 0px;
   background-color: $headerbackground;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   &__wrapper {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;

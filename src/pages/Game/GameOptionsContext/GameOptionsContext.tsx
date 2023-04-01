@@ -6,12 +6,12 @@ export interface IOptionsContext {
   modes: string[];
   setMode?: React.Dispatch<React.SetStateAction<string>>;
 }
-export const OptionsContext = React.createContext({
+export const GameOptionsContext = React.createContext({
   currentMode: '',
   modes: [''],
 });
 
-export default function OptionsContextProvider({ children }: { children: React.ReactNode }) {
+export default function GameOptionsContextProvider({ children }: { children: React.ReactNode }) {
   const birdsData = useContext(BirdsContext);
   const [mode, setMode] = useState(birdsData[0].category);
 
@@ -21,5 +21,5 @@ export default function OptionsContextProvider({ children }: { children: React.R
     setMode: setMode,
   };
 
-  return <OptionsContext.Provider value={options}>{children}</OptionsContext.Provider>;
+  return <GameOptionsContext.Provider value={options}>{children}</GameOptionsContext.Provider>;
 }

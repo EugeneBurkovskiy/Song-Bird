@@ -83,3 +83,9 @@ body {
   color: $fontColor;
   background-color: $backgroundColor;
 }
+
+#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: minmax(50px, 110px) auto 100px;
+}

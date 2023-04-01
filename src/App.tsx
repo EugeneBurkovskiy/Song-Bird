@@ -3,13 +3,14 @@ import React from 'react';
 import Router from './router/Router';
 import Footer from './components/Footer/Footer';
 import BirdsContextProvider from './context/BirdsContext';
+import classes from './App.module.scss';
 
 function App() {
   return (
     <>
       <Header />
       <BirdsContextProvider>
-        <main>
+        <main className={classes.main}>
           <Router />
         </main>
       </BirdsContextProvider>

@@ -1,10 +1,10 @@
 import CategoryButton from '../../../components/Buttons/CategoryButton/CategoryButton';
 import React, { useContext } from 'react';
 import classes from '../GameMode/GameMode.module.scss';
-import { IOptionsContext, OptionsContext } from '../GameContext/GameContext';
+import { IOptionsContext, GameOptionsContext } from '../GameOptionsContext/GameOptionsContext';
 
 export default function GameMode() {
-  const options = useContext<IOptionsContext>(OptionsContext);
+  const options = useContext<IOptionsContext>(GameOptionsContext);
   return (
     <section className={classes.categories}>
       <h2 className={classes.categories__title}>Game mode</h2>
