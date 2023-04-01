@@ -6,6 +6,10 @@
     align-items: center;
     font-size: 1.8rem;
     column-gap: 30px;
+    &-mobile {
+      flex-direction: column;
+      row-gap: 30px;
+    }
     &-item {
       a {
         position: relative;
