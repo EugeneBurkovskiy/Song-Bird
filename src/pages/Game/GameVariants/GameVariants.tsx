@@ -1,25 +1,27 @@
 import { IBird } from '../../../context/BirdsContext';
-import React, { useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from '../../../components/Сard/Card';
-import { GameOptionsContext } from '../GameOptionsContext/GameOptionsContext';
 import classes from './GameVariants.module.scss';
 
-export default function GameQuestion({ data }: { data: IBird[] }) {
-  const { currentMode } = useContext(GameOptionsContext);
+export default function GameQuestion({ data, gameMode }: { data: IBird[]; gameMode: string }) {
+  const [variants, setVariants] = useState<IBird[] | null>(null);
 
-  return (
+  useEffect(() => {
+    const variantsBirdsArr = data.filter((item) => item.category === gameMode);
+    setVariants(variantsBirdsArr);
+  }, [data, gameMode]);
+
+  return variants ? (
     <section className={classes.variants}>
       <Card>
         <ul className={classes.variants__list}>
-          {data.map((item) =>
-            item.category === currentMode ? (
-              <li key={item.id} className={classes.variants__item}>
-                {item.name}
-              </li>
-            ) : null
-          )}
+          {variants.map((item) => (
+            <li key={item.id} className={classes.variants__item}>
+              {item.name}
+            </li>
+          ))}
         </ul>
       </Card>
     </section>
-  );
+  ) : null;
 }

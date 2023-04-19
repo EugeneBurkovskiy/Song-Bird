@@ -8,7 +8,7 @@ export default function CategoryButton({
   ...args
 }: {
   title: string;
-  changeMode?: Dispatch<SetStateAction<string>>;
+  changeMode?: Dispatch<SetStateAction<string | null>>;
   active?: boolean;
 }) {
   return (
