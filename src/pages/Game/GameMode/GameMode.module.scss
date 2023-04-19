@@ -1,10 +1,8 @@
 @import "../../../theme/variables";
-.categories {
-  background-color: $backgroundWindows;
-  padding: 20px;
-  width: 100%;
-  border-radius: $windowBorderRadius;
+.section {
   margin-bottom: 20px;
+}
+.categories {
   &__title {
     text-align: center;
     font-size: 2rem;

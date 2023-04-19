@@ -1,19 +1,16 @@
-import { BirdsContext } from '../../../context/BirdsContext';
-import React, { useContext } from 'react';
-import { IOptionsContext, GameOptionsContext } from '../GameOptionsContext/GameOptionsContext';
-import classes from './GameQuestion.module.scss';
+import { IBird } from '../../../context/BirdsContext';
+import React from 'react';
 import BirdCard from '../../../components/BirdCard/BirdCard';
+import classes from './GameQuestion.module.scss';
 
-export default function GameQuestion() {
-  const options = useContext<IOptionsContext>(GameOptionsContext);
-  const data = useContext(BirdsContext);
-
+export default function GameQuestion({ data }: { data: IBird[] }) {
   function getRandomQuestion() {
     const randomNum = Math.ceil(Math.random() * 6);
     return data[randomNum];
   }
+
   return (
-    <section>
+    <section className={classes.question}>
       <BirdCard bird={getRandomQuestion()} />
     </section>
   );
