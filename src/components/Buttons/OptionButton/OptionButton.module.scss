@@ -1,0 +1,33 @@
+@import "../../../theme/variables";
+.button {
+  background-color: $buttonColor;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  cursor: pointer;
+  transition: all $transitionTime;
+  position: relative;
+  font-size: 1.5rem;
+  color: $fontColor;
+  &::before {
+    content: "";
+    background-color: $backgroundWindows;
+    border-radius: 100%;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all $transitionTime;
+  }
+  &:hover {
+    background-color: $buttonHoverColor;
+    &::before {
+      background-color: $fontColor;
+    }
+  }
+}

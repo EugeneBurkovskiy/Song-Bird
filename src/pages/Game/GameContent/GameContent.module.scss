@@ -1,0 +1,15 @@
+.answer {
+  width: 100%;
+  display: grid;
+  justify-content: space-between;
+  grid-template: 1fr / 28% 70%;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .answer {
+    height: 100%;
+    grid-template: auto 1fr/ 1fr;
+    gap: 20px;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import classes from './CustomButton.module.scss';
+import classes from './OptionButton.module.scss';
 
 interface IProps {
   title?: string;
@@ -8,7 +8,13 @@ interface IProps {
   onClick?: () => void;
 }
 
-const CustomButton: React.FC<IProps> = ({ title, disable = false, children, onClick, ...args }) => {
+const OptionsButton: React.FC<IProps> = ({
+  title,
+  disable = false,
+  children,
+  onClick,
+  ...args
+}) => {
   return (
     <button
       className={`${classes.button} ${disable && classes.button_disable}`}
@@ -20,4 +26,4 @@ const CustomButton: React.FC<IProps> = ({ title, disable = false, children, onCl
   );
 };
 
-export default CustomButton;
+export default OptionsButton;

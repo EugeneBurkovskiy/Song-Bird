@@ -16,5 +16,6 @@
   }
   &_disable {
     background-color: $buttonDisableColor;
+    pointer-events: none;
   }
 }
