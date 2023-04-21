@@ -1,17 +1,23 @@
 @import "../../theme/variables";
 .card {
   display: grid;
-  grid-template: 30px 0.2fr 1fr / 1fr 4fr;
-  column-gap: 10px;
-  height: 150px;
+  grid-template-columns: 200px;
+  gap: 20px;
   &__image {
     width: 200px;
-    height: 100%;
+    height: 200px;
     border: 3px solid $fontColor;
     border-radius: $windowBorderRadius;
     overflow: hidden;
-    grid-column: 1/1;
-    grid-row: 1/4;
+    grid-row: 1/5;
+    &-question {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 8rem;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -20,39 +26,53 @@
   }
   &__name {
     font-size: 1.5rem;
-    grid-column: 2/3;
   }
   &__divider {
-    grid-column: 2/3;
     background-color: $fontColor;
     height: 5px;
     width: 100%;
   }
   &__audio {
     width: 100%;
-    grid-column: 2/3;
+    grid-column: 2;
     audio {
       width: 100%;
     }
   }
+  &__description {
+    margin-top: 20px;
+    text-align: justify;
+  }
+}
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: $backgroundWindows;
+  z-index: 10;
+  text-align: center;
+  transition: all $transitionTime;
+  font-size: 2rem;
+
+  &__off {
+    top: -100%;
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 425px) {
   .card {
-    grid-template: 150px 50px 50px 50px / 1fr;
-    height: 400px;
+    grid-template-columns: 100%;
+    gap: 10px;
     &__image {
-      grid-column: 1/1;
-      grid-row: 1/1;
-    }
-    &__name {
-      grid-column: 1/1;
-    }
-    &__divider {
-      grid-column: 1/1;
+      justify-self: center;
     }
     &__audio {
-      grid-column: 1/1;
+      grid-column: 1;
     }
   }
 }

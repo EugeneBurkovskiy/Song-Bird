@@ -26,8 +26,24 @@
   }
   &:hover {
     background-color: $buttonHoverColor;
+    box-shadow: $windowShadow;
     &::before {
       background-color: $fontColor;
+    }
+  }
+  &_true {
+    pointer-events: none;
+    background-color: $buttonColor;
+    box-shadow: $windowShadow;
+    &::before {
+      background-color: $buttonTrueColor;
+    }
+  }
+  &_false {
+    background-color: $buttonDisableColor;
+    pointer-events: none;
+    &::before {
+      background-color: $buttonFalseColor;
     }
   }
 }

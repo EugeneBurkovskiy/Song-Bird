@@ -3,21 +3,23 @@ import classes from './OptionButton.module.scss';
 
 interface IProps {
   title?: string;
-  disable?: boolean;
+  status?: boolean | 'pending';
   children?: ReactNode;
   onClick?: () => void;
 }
 
 const OptionsButton: React.FC<IProps> = ({
   title,
-  disable = false,
+  status = 'pending',
   children,
   onClick,
   ...args
 }) => {
   return (
     <button
-      className={`${classes.button} ${disable && classes.button_disable}`}
+      className={`${classes.button} ${
+        (status === true && classes.button_true) || (status === false && classes.button_false)
+      }`}
       {...args}
       onClick={onClick}
     >

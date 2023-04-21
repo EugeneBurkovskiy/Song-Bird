@@ -8,6 +8,7 @@
   width: 100%;
   transition: all $transitionTime;
   border-radius: $buttonBorderRadius;
+  box-shadow: $windowShadow;
   &:hover {
     background-color: $buttonHoverColor;
   }
@@ -17,5 +18,6 @@
   &_disable {
     background-color: $buttonDisableColor;
     pointer-events: none;
+    box-shadow: none;
   }
 }

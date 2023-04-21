@@ -3,5 +3,9 @@
   border-radius: 20px;
   background-color: $backgroundWindows;
   width: 100%;
+  height: 100%;
   padding: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: $windowShadow;
 }

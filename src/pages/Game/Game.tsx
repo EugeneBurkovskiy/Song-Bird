@@ -6,7 +6,7 @@ import GameContent from './GameContent/GameContent';
 import classes from './Game.module.scss';
 
 export default function Game() {
-  const data = useContext(BirdsContext);
+  const { data } = useContext(BirdsContext);
 
   return data ? (
     <article className={classes.game}>
