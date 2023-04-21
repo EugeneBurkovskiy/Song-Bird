@@ -6,10 +6,6 @@
     font-size: 2rem;
     margin-bottom: 20px;
   }
-  &__headers {
-    display: flex;
-    justify-content: space-around;
-  }
   &__list {
     width: 100%;
     display: grid;
@@ -17,6 +13,14 @@
     &-item {
       display: flex;
       justify-content: space-between;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .score {
+    &__list {
+      font-size: 0.9rem;
     }
   }
 }

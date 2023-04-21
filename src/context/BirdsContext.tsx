@@ -30,11 +30,24 @@ export const BirdsContext = React.createContext<IBirdContext>({
 
 export default function BirdsContextProvider({ children }: { children: React.ReactNode }) {
   const [data, setData] = useState<IBird[] | null>(null);
-  const [score, setScore] = useState<IScore[]>([]);
+  const [score, setScore] = useState<IScore[]>(
+    JSON.parse(localStorage.getItem('birdsScore') as string) || []
+  );
 
   useEffect(() => {
     getAllBirds().then((res) => setData(res));
   }, []);
+
+  // useEffect(() => {
+  //   if (score.length) {
+  //     if (localStorage.getItem('birdsScore')) {
+  //       const storageScore = JSON.parse(localStorage.getItem('birdsScore') as string);
+  //       localStorage.setItem('birdsScore', JSON.stringify(score));
+  //     } else {
+  //       localStorage.setItem('birdsScore', JSON.stringify(score));
+  //     }
+  //   }
+  // }, [score]);
 
   const contextObj: IBirdContext = {
     data: data,
