@@ -1,5 +1,5 @@
 import { BirdsContext } from '../../context/BirdsContext';
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import Container from '../../components/Container/Container';
 import classes from './Score.module.scss';
 import Card from '../../components/Сard/Card';
@@ -7,6 +7,15 @@ import NotFound from '../../components/NotFound/NotFound';
 
 export default function Score() {
   const { score } = useContext(BirdsContext);
+
+  function parseDate(storageDate: Date) {
+    const date = new Date(storageDate);
+    return `${date.getHours()}:${date.getMinutes()} | ${date.getDate()}/${
+      date.getMonth() + 1
+    }/${date.getFullYear()}`;
+  }
+  const scoreCopy = useMemo(() => score.slice(), [score]);
+
   return (
     <article className={classes.score}>
       <Container>
@@ -15,16 +24,14 @@ export default function Score() {
           {score.length ? (
             <Card>
               <ul className={classes.score__list}>
-                {score
+                {scoreCopy
                   .sort((a, b) => b.points - a.points)
                   .map((item, i) => (
-                    <li key={item.date.getMilliseconds()} className={classes['score__list-item']}>
+                    <li key={i} className={classes['score__list-item']}>
                       <p>{i + 1}</p>
                       <p>{item.points}</p>
                       <p>{item.mode}</p>
-                      <p>{`${item.date.getHours()}:${item.date.getMinutes()} | ${item.date.getDate()}/${
-                        item.date.getMonth() + 1
-                      }/${item.date.getFullYear()}`}</p>
+                      <p>{parseDate(item.date)}</p>
                     </li>
                   ))}
               </ul>

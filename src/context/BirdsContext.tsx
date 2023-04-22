@@ -38,16 +38,18 @@ export default function BirdsContextProvider({ children }: { children: React.Rea
     getAllBirds().then((res) => setData(res));
   }, []);
 
-  // useEffect(() => {
-  //   if (score.length) {
-  //     if (localStorage.getItem('birdsScore')) {
-  //       const storageScore = JSON.parse(localStorage.getItem('birdsScore') as string);
-  //       localStorage.setItem('birdsScore', JSON.stringify(score));
-  //     } else {
-  //       localStorage.setItem('birdsScore', JSON.stringify(score));
-  //     }
-  //   }
-  // }, [score]);
+  useEffect(() => {
+    const storageScore = JSON.parse(localStorage.getItem('birdsScore') as string);
+    if (storageScore && score.length) {
+      if (JSON.stringify(storageScore) !== JSON.stringify(score))
+        localStorage.setItem(
+          'birdsScore',
+          JSON.stringify([...storageScore, score[score.length - 1]])
+        );
+    } else if (!storageScore && score.length) {
+      localStorage.setItem('birdsScore', JSON.stringify(score));
+    }
+  }, [score]);
 
   const contextObj: IBirdContext = {
     data: data,
