@@ -4,7 +4,7 @@ This is a quiz app. The point is to guess the names of birds by their singing. T
 
 ## Deploy
 
-// In progress... //
+https://song-bird-rsschool.netlify.app
 
 ## Install instructions
 
@@ -12,7 +12,7 @@ This is a quiz app. The point is to guess the names of birds by their singing. T
 1. git clone https://github.com/EugeneBurkovskiy/Song-Bird.git
 2. git checkout songbird-react-ts
 3. npm i
-4. npm start
+4. npm run dev
 ```
 
 ### Used technologies
@@ -20,6 +20,6 @@ This is a quiz app. The point is to guess the names of birds by their singing. T
 - TypeScript
 - React
 - SCSS
-- json-server
+- Firebase
 - ESlint / prettier
 - Vite
