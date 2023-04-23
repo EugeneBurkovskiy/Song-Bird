@@ -20,7 +20,7 @@ const GameMode: React.FC<IProps> = ({ currentGameMode, setCurrentGameMode, gameM
               item === currentGameMode ? (
                 <CategoryButton active={true} title={item} key={item} />
               ) : (
-                <CategoryButton changeMode={setCurrentGameMode} title={item} key={item} />
+                <CategoryButton onClick={() => setCurrentGameMode(item)} title={item} key={item} />
               )
             )}
           </ul>

@@ -1,11 +1,11 @@
 @import "../../theme/variables";
 .card {
   display: grid;
-  grid-template-columns: 200px;
+  grid-template-columns: 150px;
   gap: 20px;
   &__image {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border: 3px solid $fontColor;
     border-radius: $windowBorderRadius;
     overflow: hidden;

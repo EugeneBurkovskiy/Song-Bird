@@ -2,9 +2,10 @@ $offset: 187;
 $duration: 1.4s;
 
 .loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .spinner {
   animation: rotator $duration linear infinite;

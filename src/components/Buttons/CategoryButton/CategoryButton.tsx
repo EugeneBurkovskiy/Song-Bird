@@ -1,20 +1,20 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import React from 'react';
 import classes from './CategoryButton.module.scss';
 
 export default function CategoryButton({
   title,
   active = false,
-  changeMode,
+  onClick,
   ...args
 }: {
   title: string;
-  changeMode?: Dispatch<SetStateAction<string>>;
+  onClick?: () => void;
   active?: boolean;
 }) {
   return (
     <button
       className={`${classes.category} ${active && classes.category_active}`}
-      onClick={() => (changeMode ? changeMode(title) : null)}
+      onClick={onClick}
       {...args}
     >
       {title}
