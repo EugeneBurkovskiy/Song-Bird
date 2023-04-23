@@ -1,0 +1,12 @@
+@import "../../theme/variables";
+
+.search {
+  font-size: 1.3rem;
+  padding: 10px;
+  border-radius: $windowBorderRadius;
+  border: 3px solid $backgroundWindows;
+  transition: all $transitionTime;
+  &:focus {
+    box-shadow: $windowShadow;
+  }
+}

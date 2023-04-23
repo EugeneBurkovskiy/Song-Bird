@@ -2,7 +2,8 @@
 .card {
   display: grid;
   grid-template-columns: 150px;
-  gap: 20px;
+  column-gap: 20px;
+  row-gap: 10px;
   &__image {
     width: 150px;
     height: 150px;
@@ -40,7 +41,7 @@
     }
   }
   &__description {
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: justify;
   }
 }

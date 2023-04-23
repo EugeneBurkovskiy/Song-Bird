@@ -28,6 +28,7 @@ const BirdCard: React.FC<IProps> = ({ bird, hide = true, details = false, cover 
         </div>
         <h3 className={classes.card__name}>{hide ? '***' : bird.name}</h3>
         {details && <h4 className={classes.card__species}>{bird.species}</h4>}
+        {details && <h4 className={classes.card__сategory}>{bird.category}</h4>}
         <div className={classes.card__divider}></div>
         <div className={classes.card__audio}>
           <audio src={bird.audio} controls></audio>

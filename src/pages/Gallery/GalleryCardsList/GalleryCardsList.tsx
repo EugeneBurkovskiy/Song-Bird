@@ -2,15 +2,31 @@ import BirdCard from '../../../components/BirdCard/BirdCard';
 import { IBird } from 'context/BirdsContext';
 import React from 'react';
 import classes from './GalleryCardsList.module.scss';
+import NotFound from '../../../components/NotFound/NotFound';
+import { ISearchParams } from '../Gallery';
 
-export default function GalleryList({ birds }: { birds: IBird[] }) {
-  return (
-    <ul className={classes.list}>
-      {birds.map((bird) => (
-        <li key={bird.id} className={classes.list__item}>
-          <BirdCard bird={bird} details={true} hide={false} />
-        </li>
-      ))}
-    </ul>
-  );
+interface IProps {
+  birds: IBird[];
+  searchParams: ISearchParams;
 }
+
+const GalleryList: React.FC<IProps> = ({ birds, searchParams }) => {
+  function filterBirds(birds: IBird[], params: ISearchParams) {
+    const pattern = new RegExp(`^${params.searchValue}`, 'i');
+    const filteredArr = birds.filter((item) =>
+      pattern.test(item[`${params.select}` as keyof IBird] as string)
+    );
+    if (filteredArr.length) {
+      return filteredArr.map((item) => (
+        <li key={item.id} className={classes.list__item}>
+          <BirdCard bird={item} details={true} hide={false} />
+        </li>
+      ));
+    }
+    return <NotFound text={`"${searchParams.searchValue}" not found`} />;
+  }
+
+  return <ul className={classes.list}>{filterBirds(birds, searchParams)}</ul>;
+};
+
+export default GalleryList;
