@@ -10,10 +10,18 @@ export default function Score() {
 
   function parseDate(storageDate: Date) {
     const date = new Date(storageDate);
-    return `${date.getHours()}:${date.getMinutes()} | ${date.getDate()}/${
-      date.getMonth() + 1
-    }/${date.getFullYear()}`;
+    function addZero(value: number) {
+      if (value < 10) {
+        return `0${value}`;
+      }
+      return value;
+    }
+
+    return `${addZero(date.getHours())}:${addZero(date.getMinutes())} | ${addZero(
+      date.getDate()
+    )}/${addZero(date.getMonth() + 1)}/${date.getFullYear()}`;
   }
+
   const scoreCopy: IScore[] = useMemo(() => score.slice(), [score]);
 
   return (

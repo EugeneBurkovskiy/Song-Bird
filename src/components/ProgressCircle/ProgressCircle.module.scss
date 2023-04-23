@@ -1,0 +1,62 @@
+@import "../../theme/variables";
+
+.progress-bar {
+  &__content {
+    display: flex;
+    justify-content: center;
+    transition: 500ms;
+    cursor: context-menu;
+    svg {
+      position: relative;
+      width: 250px;
+      height: 250px;
+    }
+    svg circle {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: $buttonDisableColor;
+      stroke-width: 11;
+      stroke-linecap: round;
+      transform: translate(5px, 5px);
+    }
+    svg circle:nth-child(2) {
+      stroke-dasharray: 750;
+      stroke-dashoffset: 750;
+      stroke: $buttonActiveColor;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: $backgroundWindows;
+    color: $windowShadow;
+  }
+
+  &__number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: 500ms;
+  }
+
+  &__title {
+    color: inherit;
+    font-weight: 700;
+    font-size: 80px;
+    transition: 0.5s;
+    span {
+      color: inherit;
+      font-size: 0.5em;
+    }
+  }
+}
