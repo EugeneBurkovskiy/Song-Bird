@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getAllBirds } from '../service/api';
-
+import { getBirds } from '../firebase/config';
 interface IBirdContext {
   data: IBird[] | null;
   score: IScore[];
@@ -35,7 +34,8 @@ export default function BirdsContextProvider({ children }: { children: React.Rea
   );
 
   useEffect(() => {
-    getAllBirds().then((res) => setData(res));
+    // getAllBirds().then((res) => setData(res));
+    getBirds().then((res: IBird[]) => setData(res));
   }, []);
 
   useEffect(() => {

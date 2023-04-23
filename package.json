@@ -12,6 +12,7 @@
     "start": "concurrently \"npm run dev\" \"npm run json-server\""
   },
   "dependencies": {
+    "firebase": "^9.20.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.9.0"
