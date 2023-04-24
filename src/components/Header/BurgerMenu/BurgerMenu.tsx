@@ -9,10 +9,6 @@ export default function BurgerMenu() {
     setMenu((prev) => !prev);
   }
 
-  function handleMenuClick(event: React.MouseEvent) {
-    event.stopPropagation();
-  }
-
   return (
     <>
       <button
@@ -24,7 +20,7 @@ export default function BurgerMenu() {
         <div className={classes.burger__item}></div>
       </button>
       <div className={`${classes.menu__overlay} ${menu && classes.show}`} onClick={handleBurger}>
-        <div className={`${classes.menu} ${menu && classes.show}`} onClick={handleMenuClick}>
+        <div className={`${classes.menu} ${menu && classes.show}`}>
           <button className={classes.menu__close} onClick={handleBurger}>
             ✖
           </button>
