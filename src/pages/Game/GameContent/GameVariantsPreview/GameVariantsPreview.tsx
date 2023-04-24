@@ -8,18 +8,16 @@ interface IProps {
 }
 
 const GameVariantsPreview: React.FC<IProps> = ({ options }) => {
-  function showPreview() {
-    if (options.falseAnswers.length) {
-      return options.falseAnswers[options.falseAnswers.length - 1];
-    }
-    return options.options[0];
-  }
   return (
     <BirdCard
-      bird={showPreview()}
+      bird={
+        options.answer ||
+        options.falseAnswers[options.falseAnswers.length - 1] ||
+        options.options[0]
+      }
       hide={false}
       details={true}
-      cover={!!options.falseAnswers.length}
+      cover={!!options.falseAnswers.length || !!options.answer}
     />
   );
 };

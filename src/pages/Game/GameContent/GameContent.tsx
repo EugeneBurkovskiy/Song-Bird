@@ -1,5 +1,5 @@
 import { BirdsContext, IBird } from '../../../context/BirdsContext';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import classes from './GameContent.module.scss';
 import GameMode from './GameMode/GameMode';
 import GameQuestion from './GameQuestion/GameQuestion';
@@ -34,8 +34,17 @@ export default function GameContent({ data }: { data: IBird[] }) {
   const [showModal, setShowModal] = useState(false);
   const [newGame, setNewGame] = useState(false);
 
+  const gameModsArr = useMemo(() => [...new Set(data.map((item) => item.category))], [data]);
+
+  const options = useMemo(
+    () => data.filter((item) => item.category === currentGameMode),
+    [currentGameMode, data, newGame]
+  );
+
+  const availableOptions = useMemo(() => options.slice(), [options, newGame]);
+
   useEffect(() => {
-    setOptionsObj(getLvlOptions(data));
+    setOptionsObj(getInitialOptions(options, availableOptions));
     setStats({ currentLvl: 1, currentPoints: 0 });
   }, [currentGameMode, newGame]);
 
@@ -48,20 +57,15 @@ export default function GameContent({ data }: { data: IBird[] }) {
     }
   }, [showModal]);
 
-  function getGameModsArr(data: IBird[]) {
-    const gameModsArr = [...new Set(data.map((item) => item.category))];
-    return gameModsArr;
-  }
-
-  function getLvlOptions(data: IBird[]) {
-    const options = data.filter((item) => item.category === currentGameMode);
-    const questionId = Math.ceil(Math.random() * 5);
-    const question = options[questionId];
+  function getInitialOptions(options: IBird[], availableOptions: IBird[]) {
+    const questionId = Math.floor(Math.random() * availableOptions.length);
+    const question = availableOptions[questionId];
+    availableOptions.splice(questionId, 1);
     return { question: question, options: options, falseAnswers: [], answer: null };
   }
 
-  function handleNextLvl() {
-    setOptionsObj(getLvlOptions(data));
+  function handleNextLvl(options: IBird[]) {
+    setOptionsObj(getInitialOptions(options, availableOptions));
     setStats({
       ...stats,
       currentLvl: (stats.currentLvl += 1),
@@ -86,7 +90,7 @@ export default function GameContent({ data }: { data: IBird[] }) {
       <GameMode
         currentGameMode={currentGameMode}
         setCurrentGameMode={setCurrentGameMode}
-        gameModsArr={getGameModsArr(data)}
+        gameModsArr={gameModsArr}
       />
       <GameProgress stats={stats} />
       <GameQuestion options={optionsObj} />
@@ -95,7 +99,11 @@ export default function GameContent({ data }: { data: IBird[] }) {
         <GameVariantsPreview options={optionsObj} />
       </section>
       {stats.currentLvl < 5 ? (
-        <CustomButton title="Next" disable={!optionsObj.answer} onClick={() => handleNextLvl()} />
+        <CustomButton
+          title="Next"
+          disable={!optionsObj.answer}
+          onClick={() => handleNextLvl(options)}
+        />
       ) : (
         <CustomButton
           title="Finish"
