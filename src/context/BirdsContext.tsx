@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getBirds } from '../firebase/config';
+import { getBirds } from '../service/config';
 interface IBirdContext {
   data: IBird[] | null;
   score: IScore[];

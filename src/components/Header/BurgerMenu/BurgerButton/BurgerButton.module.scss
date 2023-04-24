@@ -1,0 +1,36 @@
+@import "../../../../theme/variables";
+.burger {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  display: flex;
+  height: 25px;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: transparent;
+  transform: translateY(-50%);
+  z-index: 100;
+  &__item {
+    transition: all $transitionTime;
+    width: 40px;
+    height: 3px;
+    background-color: $fontColor;
+  }
+  &_cross {
+    div {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      &:first-child {
+        display: none;
+      }
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
