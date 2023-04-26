@@ -24,7 +24,7 @@ const ProgressCircle: React.FC<ProgressCircleProps> = ({ percent }) => {
         </svg>
         <div className={classes['progress-bar__number']}>
           <div className={classes['progress-bar__title']}>
-            {percent || 0}
+            {percent}
             <span>%</span>
           </div>
         </div>

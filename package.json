@@ -8,8 +8,8 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "eslint",
-    "json-server": "json-server --watch db.json",
-    "start": "concurrently \"npm run dev\" \"npm run json-server\""
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "firebase": "^9.20.0",

@@ -10,7 +10,7 @@ interface IProps {
   cover?: boolean;
 }
 
-const BirdCard: React.FC<IProps> = ({ bird, hide = true, details = false, cover }) => {
+const BirdCard: React.FC<IProps> = ({ bird, hide = false, details = false, cover }) => {
   return (
     <Card>
       {cover !== undefined && (

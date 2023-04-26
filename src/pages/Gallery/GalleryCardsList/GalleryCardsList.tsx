@@ -19,7 +19,7 @@ const GalleryList: React.FC<IProps> = ({ birds, searchParams }) => {
     if (filteredArr.length) {
       return filteredArr.map((item) => (
         <li key={item.id} className={classes.list__item}>
-          <BirdCard bird={item} details={true} hide={false} />
+          <BirdCard bird={item} details={true} />
         </li>
       ));
     }

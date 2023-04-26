@@ -8,12 +8,11 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: './tests/setupTests.ts',
+    setupFiles: './test/setupTests.tsx',
     coverage: {
       enabled: true,
       provider: 'c8',
       all: true,
-      reportsDirectory: './tests/coverage',
     },
   },
 });

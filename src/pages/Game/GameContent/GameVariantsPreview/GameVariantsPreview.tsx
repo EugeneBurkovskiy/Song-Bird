@@ -15,7 +15,6 @@ const GameVariantsPreview: React.FC<IProps> = ({ options }) => {
         options.falseAnswers[options.falseAnswers.length - 1] ||
         options.options[0]
       }
-      hide={false}
       details={true}
       cover={!!options.falseAnswers.length || !!options.answer}
     />
