@@ -1,5 +1,5 @@
 @import "../../theme/variables";
-
+@import "../../theme/animations";
 .overlay {
   position: fixed;
   z-index: 100;
@@ -16,4 +16,19 @@
   min-height: 300px;
   background-color: $backgroundWindows;
   border-radius: $windowBorderRadius;
+  position: relative;
+  animation: show $transitionTime;
+  &__close {
+    height: 50px;
+    cursor: pointer;
+    font-size: 3rem;
+    line-height: 20px;
+    transition: all $transitionTime;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    &:hover {
+      color: $buttonHoverColor;
+    }
+  }
 }

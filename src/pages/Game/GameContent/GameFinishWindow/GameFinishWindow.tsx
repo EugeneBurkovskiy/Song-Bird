@@ -15,7 +15,7 @@ export default function GameFinishWindow({
     return Math.floor((score / allQuestions) * 100);
   }
   return (
-    <ModalWindow>
+    <ModalWindow controls={false}>
       <div className={classes.content}>
         <h3 className={classes.content__title}>Congratulations!</h3>
         <p className={classes.content__mode}>{gameMode}</p>

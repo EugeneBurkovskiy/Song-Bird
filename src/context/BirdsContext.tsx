@@ -34,7 +34,6 @@ export default function BirdsContextProvider({ children }: { children: React.Rea
   );
 
   useEffect(() => {
-    // getAllBirds().then((res) => setData(res));
     getBirds().then((res: IBird[]) => setData(res));
   }, []);
 

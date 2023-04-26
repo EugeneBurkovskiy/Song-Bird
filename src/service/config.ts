@@ -1,12 +1,8 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getDatabase, ref, child, get } from 'firebase/database';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: 'AIzaSyDPJ4UNtdo3QRYQE3xyJKvdbNM_U7TCVjM',
   authDomain: 'songbird-509b0.firebaseapp.com',
@@ -17,7 +13,6 @@ const firebaseConfig = {
   databaseURL: 'tps://songbird-509b0-default-rtdb.europe-west1.firebasedatabase.app',
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore();
