@@ -18,7 +18,7 @@ https://song-bird-rsschool.netlify.app
 ### Used technologies
 
 - TypeScript
-- React
+- React / react-router
 - SCSS
 - Jest / RTL
 - Firebase
