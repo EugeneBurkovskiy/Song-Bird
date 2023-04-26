@@ -20,6 +20,7 @@ https://song-bird-rsschool.netlify.app
 - TypeScript
 - React
 - SCSS
+- Jest / RTL
 - Firebase
 - ESlint / prettier
 - Vite
