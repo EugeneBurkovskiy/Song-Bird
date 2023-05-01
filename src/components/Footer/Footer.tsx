@@ -3,7 +3,7 @@ import React from 'react';
 import classes from './Footer.module.scss';
 import Container from '../Container/Container';
 
-export default function Footer() {
+const Footer = () => {
   return (
     <footer className={classes.footer}>
       <Container>
@@ -21,4 +21,6 @@ export default function Footer() {
       </Container>
     </footer>
   );
-}
+};
+
+export default Footer;

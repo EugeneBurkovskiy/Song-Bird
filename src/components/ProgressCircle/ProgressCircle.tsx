@@ -5,9 +5,8 @@ interface ProgressCircleProps {
   percent: number;
 }
 
-const circleDiameter = '120';
-
 const ProgressCircle: React.FC<ProgressCircleProps> = ({ percent }) => {
+  const circleDiameter = '120';
   return (
     <div className={classes['progress-bar__content']}>
       <div className={classes['progress-bar__wrapper']}>

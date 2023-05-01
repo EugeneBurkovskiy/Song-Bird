@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Loading.module.scss';
 
-export default function Loading() {
+const Loading = () => {
   return (
     <div className={classes.loading} data-testid="loading">
       <svg
@@ -23,4 +23,6 @@ export default function Loading() {
       </svg>
     </div>
   );
-}
+};
+
+export default Loading;

@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './GitHubIcon.module.scss';
 
-export default function GitHubIcon() {
+const GitHubIcon = () => {
   return (
     <a href="https://github.com/EugeneBurkovskiy" target={'blank'} className={classes.link}>
       <svg
@@ -29,4 +29,6 @@ export default function GitHubIcon() {
       </svg>
     </a>
   );
-}
+};
+
+export default GitHubIcon;

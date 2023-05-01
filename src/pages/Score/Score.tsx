@@ -5,7 +5,7 @@ import Card from '../../components/Сard/Card';
 import NotFound from '../../components/NotFound/NotFound';
 import PageContainer from '../../components/PageContainer/PageContainer';
 
-export default function Score() {
+const Score = () => {
   const { score } = useContext(BirdsContext);
 
   function parseDate(storageDate: Date) {
@@ -46,4 +46,6 @@ export default function Score() {
       )}
     </PageContainer>
   );
-}
+};
+
+export default Score;

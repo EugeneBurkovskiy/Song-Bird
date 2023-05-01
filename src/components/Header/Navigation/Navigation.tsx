@@ -3,7 +3,11 @@ import { NavLink } from 'react-router-dom';
 import { routes } from '../../../router/routes';
 import classes from './Navigation.module.scss';
 
-export default function Navigation({ mobile }: { mobile?: boolean }) {
+interface IProps {
+  mobile?: boolean;
+}
+
+const Navigation: React.FC<IProps> = ({ mobile }) => {
   return (
     <nav className={classes.nav}>
       <ul className={`${classes.nav__list} ${mobile && classes['nav__list-mobile']}`}>
@@ -22,4 +26,6 @@ export default function Navigation({ mobile }: { mobile?: boolean }) {
       </ul>
     </nav>
   );
-}
+};
+
+export default Navigation;

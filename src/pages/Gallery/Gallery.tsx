@@ -30,7 +30,7 @@ function reducer(state: ISearchParams, action: searchParamsAction) {
   }
 }
 
-export default function Gallery() {
+const Gallery = () => {
   const { data } = useContext(BirdsContext);
   const [searchParams, dispatch] = useReducer(reducer, initialSearchParams);
 
@@ -42,4 +42,6 @@ export default function Gallery() {
   ) : (
     <Loading />
   );
-}
+};
+
+export default Gallery;

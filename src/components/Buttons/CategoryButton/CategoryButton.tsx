@@ -1,16 +1,13 @@
 import React from 'react';
 import classes from './CategoryButton.module.scss';
 
-export default function CategoryButton({
-  title,
-  active = false,
-  onClick,
-  ...args
-}: {
+interface IProps {
   title: string;
   onClick?: () => void;
   active?: boolean;
-}) {
+}
+
+const CategoryButton: React.FC<IProps> = ({ title, active = false, onClick, ...args }) => {
   return (
     <button
       className={`${classes.category} ${active && classes.category_active}`}
@@ -20,4 +17,6 @@ export default function CategoryButton({
       {title}
     </button>
   );
-}
+};
+
+export default CategoryButton;

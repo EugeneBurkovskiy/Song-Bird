@@ -5,7 +5,7 @@ import DesktopMenu from './DesktopMenu/DesktopMenu';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
 import BurgerButton from './BurgerMenu/BurgerButton/BurgerButton';
 
-export default function Header() {
+const Header = () => {
   const [mobile, setMobile] = useState(false);
   const [showBurgerMenu, setShowBurgerMenu] = useState(false);
 
@@ -39,4 +39,6 @@ export default function Header() {
       )}
     </header>
   );
-}
+};
+
+export default Header;

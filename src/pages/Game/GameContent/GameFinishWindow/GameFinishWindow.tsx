@@ -3,13 +3,12 @@ import React from 'react';
 import classes from './GameFinishWindow.module.scss';
 import ProgressCircle from '../../../../components/ProgressCircle/ProgressCircle';
 
-export default function GameFinishWindow({
-  gameMode,
-  points,
-}: {
+interface IProps {
   gameMode: string;
   points: number;
-}) {
+}
+
+const GameFinishWindow: React.FC<IProps> = ({ gameMode, points }) => {
   function calculatePercentage(score: number) {
     const allQuestions = 30;
     return Math.floor((score / allQuestions) * 100);
@@ -24,4 +23,6 @@ export default function GameFinishWindow({
       </div>
     </ModalWindow>
   );
-}
+};
+
+export default GameFinishWindow;

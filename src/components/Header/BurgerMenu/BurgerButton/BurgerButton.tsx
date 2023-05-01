@@ -5,6 +5,7 @@ interface IProps {
   setShowBurgerMenu: React.Dispatch<React.SetStateAction<boolean>>;
   showBurgerMenu: boolean;
 }
+
 const BurgerButton: React.FC<IProps> = ({ setShowBurgerMenu, showBurgerMenu }) => {
   return (
     <button

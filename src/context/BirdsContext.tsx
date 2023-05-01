@@ -27,7 +27,10 @@ export const BirdsContext = React.createContext<IBirdContext>({
   setScore: () => {},
 });
 
-export default function BirdsContextProvider({ children }: { children: React.ReactNode }) {
+interface IProps {
+  children: React.ReactNode;
+}
+const BirdsContextProvider: React.FC<IProps> = ({ children }) => {
   const [data, setData] = useState<IBird[] | null>(null);
   const [score, setScore] = useState<IScore[]>(
     JSON.parse(localStorage.getItem('birdsScore') as string) || []
@@ -57,4 +60,6 @@ export default function BirdsContextProvider({ children }: { children: React.Rea
   };
 
   return <BirdsContext.Provider value={contextObj}>{children}</BirdsContext.Provider>;
-}
+};
+
+export default BirdsContextProvider;

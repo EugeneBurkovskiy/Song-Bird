@@ -21,7 +21,11 @@ export interface IStats {
   currentPoints: number;
 }
 
-export default function GameContent({ data }: { data: IBird[] }) {
+interface IProps {
+  data: IBird[];
+}
+
+const GameContent: React.FC<IProps> = ({ data }) => {
   const { setScore } = useContext(BirdsContext);
   const [currentGameMode, setCurrentGameMode] = useState<string>(data[0].category);
   const [optionsObj, setOptionsObj] = useState<ILvlOptions>({
@@ -114,4 +118,6 @@ export default function GameContent({ data }: { data: IBird[] }) {
       {showModal && <GameFinishWindow gameMode={currentGameMode} points={stats.currentPoints} />}
     </>
   );
-}
+};
+
+export default GameContent;

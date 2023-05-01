@@ -1,6 +1,12 @@
 import React, { ReactNode } from 'react';
 import classes from './Container.module.scss';
 
-export default function Container({ children }: { children: ReactNode }) {
-  return <div className={classes.container}>{children}</div>;
+interface IProps {
+  children: ReactNode;
 }
+
+const Container: React.FC<IProps> = ({ children }) => {
+  return <div className={classes.container}>{children}</div>;
+};
+
+export default Container;

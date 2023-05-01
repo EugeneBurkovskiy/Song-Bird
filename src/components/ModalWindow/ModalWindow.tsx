@@ -8,6 +8,7 @@ interface IProps {
   setShow?: React.Dispatch<React.SetStateAction<boolean>>;
   controls?: boolean;
 }
+
 const ModalWindow: React.FC<IProps> = ({ children, show = true, setShow, controls = true }) => {
   return show
     ? ReactDOM.createPortal(

@@ -2,7 +2,7 @@ import ModalWindow from '../../../components/ModalWindow/ModalWindow';
 import React, { useState } from 'react';
 import classes from './GameHelp.module.scss';
 
-export default function GameHelp() {
+const GameHelp = () => {
   const [help, setHelp] = useState(false);
   return (
     <>
@@ -23,4 +23,6 @@ export default function GameHelp() {
       </ModalWindow>
     </>
   );
-}
+};
+
+export default GameHelp;

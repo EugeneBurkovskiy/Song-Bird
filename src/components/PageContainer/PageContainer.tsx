@@ -2,13 +2,12 @@ import React from 'react';
 import Container from '../Container/Container';
 import classes from './PageContainer.module.scss';
 
-export default function PageContainer({
-  children,
-  title,
-}: {
+interface IProps {
   children: React.ReactNode;
   title?: string;
-}) {
+}
+
+const PageContainer: React.FC<IProps> = ({ children, title }) => {
   return (
     <article className={classes.page}>
       <section>
@@ -19,4 +18,6 @@ export default function PageContainer({
       </section>
     </article>
   );
-}
+};
+
+export default PageContainer;

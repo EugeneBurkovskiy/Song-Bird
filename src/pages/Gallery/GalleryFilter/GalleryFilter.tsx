@@ -3,11 +3,11 @@ import SearchInput from '../../../components/SearchInput/SearchInput';
 import { searchParamsAction } from '../Gallery';
 import classes from './GalleryFilter.module.scss';
 
-export default function GalletyFilter({
-  setSearchParams,
-}: {
+interface IProps {
   setSearchParams: React.Dispatch<searchParamsAction>;
-}) {
+}
+
+const GalletyFilter: React.FC<IProps> = ({ setSearchParams }) => {
   return (
     <form className={classes.form}>
       <SearchInput onChange={(e) => setSearchParams({ type: 'search', payload: e.target.value })} />
@@ -23,4 +23,6 @@ export default function GalletyFilter({
       </select>
     </form>
   );
-}
+};
+
+export default GalletyFilter;
