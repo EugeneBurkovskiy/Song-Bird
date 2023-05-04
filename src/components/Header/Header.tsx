@@ -1,9 +1,11 @@
-import Container from '../../components/Container/Container';
 import React, { useEffect, useState } from 'react';
-import classes from './Header.module.scss';
+
+import Container from '../../components/Container/Container';
 import DesktopMenu from './DesktopMenu/DesktopMenu';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
 import BurgerButton from './BurgerMenu/BurgerButton/BurgerButton';
+
+import classes from './Header.module.scss';
 
 const Header = () => {
   const [mobile, setMobile] = useState(false);

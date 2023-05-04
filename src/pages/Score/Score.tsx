@@ -1,9 +1,11 @@
-import { BirdsContext, IScore } from '../../context/BirdsContext';
 import React, { useContext, useMemo } from 'react';
-import classes from './Score.module.scss';
+
+import { BirdsContext, IScore } from '../../context/BirdsContext';
 import Card from '../../components/Сard/Card';
 import NotFound from '../../components/NotFound/NotFound';
 import PageContainer from '../../components/PageContainer/PageContainer';
+
+import classes from './Score.module.scss';
 
 const Score = () => {
   const { score } = useContext(BirdsContext);

@@ -1,5 +1,7 @@
-import ModalWindow from '../../../components/ModalWindow/ModalWindow';
 import React, { useState } from 'react';
+
+import ModalWindow from '../../../components/ModalWindow/ModalWindow';
+
 import classes from './GameHelp.module.scss';
 
 const GameHelp = () => {

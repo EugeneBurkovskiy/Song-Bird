@@ -1,5 +1,6 @@
-import { BirdsContext, IBird } from '../../../context/BirdsContext';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
+
+import { BirdsContext, IBird } from '../../../context/BirdsContext';
 import GameMode from './GameMode/GameMode';
 import GameQuestion from './GameQuestion/GameQuestion';
 import GameVariantsSection from './GameVariantsSection/GameVariantsSection';

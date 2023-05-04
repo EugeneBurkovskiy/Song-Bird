@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+
 import { IBird } from '../../context/BirdsContext';
 import Loading from '../../components/Loading/Loading';
 import GalleryList from './GalleryCardsList/GalleryCardsList';
@@ -42,8 +43,7 @@ const Gallery = () => {
         <GalleryList birds={data as IBird[]} searchParams={searchParams} />
       </PageContainer>
     )) ||
-    (loading && <Loading />) ||
-    (error && <NotFound />)
+    (loading && <Loading />) || <NotFound />
   );
 };
 

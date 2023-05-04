@@ -1,5 +1,6 @@
-import { IBird } from 'context/BirdsContext';
 import { useEffect, useState } from 'react';
+
+import { IBird } from 'context/BirdsContext';
 import { getBirds } from '../service/config';
 
 const useFetching = () => {

@@ -1,9 +1,11 @@
+import React from 'react';
+
 import BirdCard from '../../../components/BirdCard/BirdCard';
 import { IBird } from 'context/BirdsContext';
-import React from 'react';
-import classes from './GalleryCardsList.module.scss';
 import NotFound from '../../../components/NotFound/NotFound';
 import { ISearchParams } from '../Gallery';
+
+import classes from './GalleryCardsList.module.scss';
 
 interface IProps {
   birds: IBird[];

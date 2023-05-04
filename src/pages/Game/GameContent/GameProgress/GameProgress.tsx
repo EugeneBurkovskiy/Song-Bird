@@ -1,5 +1,7 @@
 import React from 'react';
+
 import classes from './GameProgress.module.scss';
+
 interface IProps {
   currentLvL: number;
   currentScore: number;

@@ -1,8 +1,10 @@
-import CategoryButton from '../../../../components/Buttons/CategoryButton/CategoryButton';
 import React, { useMemo } from 'react';
-import classes from '../GameMode/GameMode.module.scss';
+
+import CategoryButton from '../../../../components/Buttons/CategoryButton/CategoryButton';
 import Card from '../../../../components/Сard/Card';
 import { IBird } from 'context/BirdsContext';
+
+import classes from '../GameMode/GameMode.module.scss';
 
 interface IProps {
   currentGameMode: string;

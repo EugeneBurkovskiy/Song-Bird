@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import Navigation from '../Navigation/Navigation';
+
 import classes from './BurgerMenu.module.scss';
 
 interface IProps {

@@ -1,7 +1,9 @@
-import GitHubIcon from '../Icons/GitHubIcon/GitHubIcon';
 import React from 'react';
-import classes from './Footer.module.scss';
+
+import GitHubIcon from '../Icons/GitHubIcon/GitHubIcon';
 import Container from '../Container/Container';
+
+import classes from './Footer.module.scss';
 
 const Footer = () => {
   return (

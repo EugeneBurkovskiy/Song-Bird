@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+
 import Card from '../../../../components/Сard/Card';
-import classes from './GameVariantsSection.module.scss';
 import OptionButton from '../../../../components/Buttons/OptionButton/OptionButton';
 import { IBird } from 'context/BirdsContext';
 import BirdCard from '../../../../components/BirdCard/BirdCard';
+
+import classes from './GameVariantsSection.module.scss';
 
 interface IProps {
   options: IBird[];

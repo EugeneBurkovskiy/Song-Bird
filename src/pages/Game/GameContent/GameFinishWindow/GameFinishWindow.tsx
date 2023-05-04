@@ -1,7 +1,9 @@
-import ModalWindow from '../../../../components/ModalWindow/ModalWindow';
 import React from 'react';
-import classes from './GameFinishWindow.module.scss';
+
+import ModalWindow from '../../../../components/ModalWindow/ModalWindow';
 import ProgressCircle from '../../../../components/ProgressCircle/ProgressCircle';
+
+import classes from './GameFinishWindow.module.scss';
 
 interface IProps {
   gameMode: string;

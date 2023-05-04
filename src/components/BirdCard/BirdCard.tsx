@@ -1,7 +1,9 @@
 import React from 'react';
-import classes from './BirdCard.module.scss';
+
 import { IBird } from 'context/BirdsContext';
 import Card from '../Сard/Card';
+
+import classes from './BirdCard.module.scss';
 
 interface IProps {
   bird: IBird;

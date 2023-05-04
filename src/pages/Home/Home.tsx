@@ -1,7 +1,9 @@
-import CustomButton from '../../components/Buttons/CustomButton/CustomButton';
 import React from 'react';
-import classes from './Home.module.scss';
 import { useNavigate } from 'react-router-dom';
+
+import CustomButton from '../../components/Buttons/CustomButton/CustomButton';
+
+import classes from './Home.module.scss';
 
 const Home = () => {
   const navigate = useNavigate();

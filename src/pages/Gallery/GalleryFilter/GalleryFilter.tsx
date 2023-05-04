@@ -1,6 +1,8 @@
 import React from 'react';
+
 import SearchInput from '../../../components/SearchInput/SearchInput';
 import { searchParamsAction } from '../Gallery';
+
 import classes from './GalleryFilter.module.scss';
 
 interface IProps {

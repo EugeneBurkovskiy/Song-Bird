@@ -1,5 +1,7 @@
 import React from 'react';
+
 import classes from './SearchInput.module.scss';
+
 interface IProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }

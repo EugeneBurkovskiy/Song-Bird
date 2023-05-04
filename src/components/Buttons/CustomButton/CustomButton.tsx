@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+
 import classes from './CustomButton.module.scss';
 
 interface IProps {

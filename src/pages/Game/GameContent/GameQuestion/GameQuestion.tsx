@@ -1,7 +1,9 @@
 import React from 'react';
+
 import BirdCard from '../../../../components/BirdCard/BirdCard';
-import classes from './GameQuestion.module.scss';
 import { IBird } from '../../../../context/BirdsContext';
+
+import classes from './GameQuestion.module.scss';
 
 interface IProps {
   question: IBird;

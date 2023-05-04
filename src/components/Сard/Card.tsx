@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+
 import classes from './Card.module.scss';
 interface IProps {
   children: ReactNode;
