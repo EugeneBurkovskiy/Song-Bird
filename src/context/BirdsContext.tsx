@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getBirds } from '../service/config';
 interface IBirdContext {
-  data: IBird[] | null;
   score: IScore[];
   setScore: React.Dispatch<React.SetStateAction<IScore[]>>;
 }
@@ -22,7 +20,6 @@ export interface IScore {
 }
 
 export const BirdsContext = React.createContext<IBirdContext>({
-  data: null,
   score: [],
   setScore: () => {},
 });
@@ -32,14 +29,9 @@ interface IProps {
 }
 
 const BirdsContextProvider: React.FC<IProps> = ({ children }) => {
-  const [data, setData] = useState<IBird[] | null>(null);
   const [score, setScore] = useState<IScore[]>(
     JSON.parse(localStorage.getItem('birdsScore') as string) || []
   );
-
-  useEffect(() => {
-    getBirds().then((res: IBird[]) => setData(res));
-  }, []);
 
   useEffect(() => {
     const storageScore = JSON.parse(localStorage.getItem('birdsScore') as string);
@@ -55,7 +47,6 @@ const BirdsContextProvider: React.FC<IProps> = ({ children }) => {
   }, [score]);
 
   const contextObj: IBirdContext = {
-    data: data,
     score: score,
     setScore: setScore,
   };

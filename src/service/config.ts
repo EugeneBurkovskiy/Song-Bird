@@ -20,17 +20,13 @@ const db = getFirestore();
 const dbRef = ref(getDatabase());
 
 export const getBirds = async () => {
-  const res = await get(child(dbRef, `birds`))
-    .then((snapshot) => {
-      if (snapshot.exists()) {
-        return snapshot.val();
-      } else {
-        console.log('No data available');
-      }
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+  const res = await get(child(dbRef, `birds`)).then((snapshot) => {
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      throw Error;
+    }
+  });
   return res;
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './NotFound.module.scss';
 
-const NotFound = ({ text }: { text: string }) => {
+const NotFound = ({ text = 'Something went wrong' }) => {
   return <div className={classes.error}>{text}</div>;
 };
 
