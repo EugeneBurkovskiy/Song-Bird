@@ -14,7 +14,7 @@ const BirdCard: React.FC<IProps> = ({ bird, hide = false, details = false, cover
   return (
     <Card>
       {cover !== undefined && (
-        <div className={`${classes.cover} ${cover && classes.cover__off}`}>
+        <div className={`${classes.cover} ${!cover && classes.cover__off}`}>
           Select an option to see details
         </div>
       )}

@@ -1,16 +1,17 @@
 import React from 'react';
 import BirdCard from '../../../../components/BirdCard/BirdCard';
 import classes from './GameQuestion.module.scss';
-import { ILvlOptions } from '../GameContent';
+import { IBird } from '../../../../context/BirdsContext';
 
 interface IProps {
-  options: ILvlOptions;
+  question: IBird;
+  correctAnswer: IBird | undefined;
 }
 
-const GameQuestion: React.FC<IProps> = ({ options }) => {
+const GameQuestion: React.FC<IProps> = ({ question, correctAnswer }) => {
   return (
     <section className={classes.question}>
-      {<BirdCard bird={options.question} hide={!options.answer} />}
+      {<BirdCard bird={question} hide={!!!correctAnswer} />}
     </section>
   );
 };

@@ -1,20 +1,11 @@
 import { BirdsContext, IBird } from '../../../context/BirdsContext';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
-import classes from './GameContent.module.scss';
 import GameMode from './GameMode/GameMode';
 import GameQuestion from './GameQuestion/GameQuestion';
-import GameVariants from './GameVariants/GameVariants';
-import GameVariantsPreview from './GameVariantsPreview/GameVariantsPreview';
+import GameVariantsSection from './GameVariantsSection/GameVariantsSection';
 import CustomButton from '../../../components/Buttons/CustomButton/CustomButton';
 import GameProgress from './GameProgress/GameProgress';
 import GameFinishWindow from './GameFinishWindow/GameFinishWindow';
-
-export interface ILvlOptions {
-  question: IBird;
-  options: IBird[];
-  falseAnswers: IBird[];
-  answer: IBird | null;
-}
 
 export interface IStats {
   currentLvl: number;
@@ -28,65 +19,51 @@ interface IProps {
 const GameContent: React.FC<IProps> = ({ data }) => {
   const { setScore } = useContext(BirdsContext);
   const [currentGameMode, setCurrentGameMode] = useState<string>(data[0].category);
-  const [optionsObj, setOptionsObj] = useState<ILvlOptions>({
-    question: data[0],
-    options: data,
-    falseAnswers: [],
-    answer: null,
-  });
-  const [stats, setStats] = useState({ currentLvl: 1, currentPoints: 0 });
-  const [showModal, setShowModal] = useState(false);
-  const [newGame, setNewGame] = useState(false);
-
-  const gameModsArr = useMemo(() => [...new Set(data.map((item) => item.category))], [data]);
+  const [currentLvl, setCurrentLvl] = useState<number>(1);
+  const [currentScore, setCurrentScore] = useState<number>(0);
+  const [correctAnswer, setCorrectAnswer] = useState<IBird>();
+  const [question, setQuestion] = useState<IBird>(data[0]);
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   const options = useMemo(
     () => data.filter((item) => item.category === currentGameMode),
-    [currentGameMode, data, newGame]
+    [currentGameMode, data]
   );
 
-  const availableOptions = useMemo(() => options.slice(), [options, newGame]);
+  useEffect(() => {
+    setQuestion(getRandomQuestion(options));
+    return () => {
+      setCorrectAnswer(undefined);
+      setQuestion(getRandomQuestion(options));
+    };
+  }, [currentLvl, options]);
 
   useEffect(() => {
-    setOptionsObj(getInitialOptions(options, availableOptions));
-    setStats({ currentLvl: 1, currentPoints: 0 });
-  }, [currentGameMode, newGame]);
+    setQuestion(getRandomQuestion(options));
+    return () => {
+      setCurrentLvl(1);
+    };
+  }, [currentGameMode, options]);
 
-  useEffect(() => {
-    if (showModal) {
-      setScore((prev) => [
-        ...prev,
-        { points: stats.currentPoints, mode: currentGameMode, date: new Date() },
-      ]);
-    }
-  }, [showModal]);
-
-  function getInitialOptions(options: IBird[], availableOptions: IBird[]) {
-    const questionId = Math.floor(Math.random() * availableOptions.length);
-    const question = availableOptions[questionId];
-    availableOptions.splice(questionId, 1);
-    return { question: question, options: options, falseAnswers: [], answer: null };
+  function getRandomQuestion(options: IBird[]) {
+    return options[Math.floor(Math.random() * 6)];
   }
 
-  function handleNextLvl(options: IBird[]) {
-    setOptionsObj(getInitialOptions(options, availableOptions));
-    setStats({
-      ...stats,
-      currentLvl: (stats.currentLvl += 1),
-      currentPoints: stats.currentPoints + (6 - optionsObj.falseAnswers.length),
-    });
+  function handleNextLvl() {
+    setCurrentLvl((prev) => (prev += 1));
   }
 
-  function handeFinishGame() {
-    setStats({
-      ...stats,
-      currentPoints: stats.currentPoints + (6 - optionsObj.falseAnswers.length),
-    });
+  function handleFinish() {
+    setScore((prev) => [
+      ...prev,
+      { points: currentScore, mode: currentGameMode, date: new Date() },
+    ]);
     setShowModal(true);
     setTimeout(() => {
       setShowModal(false);
-      setNewGame((prev) => !prev);
-    }, 3000);
+      setCurrentLvl(1);
+      setCurrentScore(0);
+    }, 2000);
   }
 
   return (
@@ -94,28 +71,25 @@ const GameContent: React.FC<IProps> = ({ data }) => {
       <GameMode
         currentGameMode={currentGameMode}
         setCurrentGameMode={setCurrentGameMode}
-        gameModsArr={gameModsArr}
+        data={data}
       />
-      <GameProgress stats={stats} />
-      <GameQuestion options={optionsObj} />
-      <section className={classes.answer}>
-        <GameVariants options={optionsObj} setOptionsObj={setOptionsObj} />
-        <GameVariantsPreview options={optionsObj} />
-      </section>
-      {stats.currentLvl < 5 ? (
-        <CustomButton
-          title="Next"
-          disable={!optionsObj.answer}
-          onClick={() => handleNextLvl(options)}
-        />
+      <GameProgress currentScore={currentScore} currentLvL={currentLvl} />
+      <GameQuestion question={question} correctAnswer={correctAnswer} />
+      <GameVariantsSection
+        options={options}
+        question={question}
+        correctAnswer={correctAnswer}
+        setCorrectAnswer={setCorrectAnswer}
+        currentLvL={currentLvl}
+        setCurrentScore={setCurrentScore}
+      />
+      {currentLvl < 5 ? (
+        <CustomButton title="Next" disable={!!!correctAnswer} onClick={() => handleNextLvl()} />
       ) : (
-        <CustomButton
-          title="Finish"
-          disable={!optionsObj.answer}
-          onClick={() => handeFinishGame()}
-        />
+        <CustomButton title="Finish" disable={!!!correctAnswer} onClick={() => handleFinish()} />
       )}
-      {showModal && <GameFinishWindow gameMode={currentGameMode} points={stats.currentPoints} />}
+
+      {showModal && <GameFinishWindow gameMode={currentGameMode} points={currentScore} />}
     </>
   );
 };

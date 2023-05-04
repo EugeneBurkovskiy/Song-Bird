@@ -30,6 +30,7 @@ export const BirdsContext = React.createContext<IBirdContext>({
 interface IProps {
   children: React.ReactNode;
 }
+
 const BirdsContextProvider: React.FC<IProps> = ({ children }) => {
   const [data, setData] = useState<IBird[] | null>(null);
   const [score, setScore] = useState<IScore[]>(

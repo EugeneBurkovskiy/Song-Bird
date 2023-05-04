@@ -1,15 +1,15 @@
 import React from 'react';
-import { IStats } from '../GameContent';
 import classes from './GameProgress.module.scss';
 interface IProps {
-  stats: IStats;
+  currentLvL: number;
+  currentScore: number;
 }
 
-const GameProgress: React.FC<IProps> = ({ stats }) => {
+const GameProgress: React.FC<IProps> = ({ currentLvL, currentScore }) => {
   return (
     <section className={classes.progress}>
-      <p className={classes.progress__level}>Level: {stats.currentLvl}</p>
-      <p className={classes.progress__points}>Points: {stats.currentPoints}</p>
+      <p className={classes.progress__level}>Level: {currentLvL}</p>
+      <p className={classes.progress__points}>Points: {currentScore}</p>
     </section>
   );
 };
