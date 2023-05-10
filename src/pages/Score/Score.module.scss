@@ -7,6 +7,27 @@
     &-item {
       display: flex;
       justify-content: space-between;
+      &-number,
+      &-points,
+      &-mode,
+      &-date {
+        width: 20%;
+      }
+    }
+  }
+}
+
+.headers {
+  &__list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    &-number,
+    &-points,
+    &-mode,
+    &-date {
+      width: 20%;
     }
   }
 }
@@ -15,6 +36,35 @@
   .score {
     &__list {
       font-size: 0.9rem;
+    }
+  }
+  .headers {
+    &__list {
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      &-number,
+      &-points,
+      &-mode,
+      &-date {
+        width: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .score {
+    &__list {
+      &-item {
+        &-number,
+        &-points,
+        &-mode,
+        &-date {
+          width: auto;
+        }
+      }
     }
   }
 }
