@@ -45,6 +45,5 @@
       "pragma": "React",
       "version": "detect"
     }
-  },
-  "files": ["**/*.tsx"]
+  }
 }

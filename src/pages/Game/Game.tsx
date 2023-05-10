@@ -2,23 +2,22 @@ import React from 'react';
 
 import Container from '../../components/Container/Container';
 import Loading from '../../components/Loading/Loading';
-import { IBird } from '../../context/BirdsContext';
-import GameContent from './GameContent/GameContent';
-import GameHelp from './GameHelp/GameHelp';
+import GameContent from '../../components/GameContent/GameContent';
 import useFetching from '../../hooks/useFetching';
 import NotFound from '../../components/NotFound/NotFound';
+import GameHelp from '../../components/GameHelp/GameHelp';
 
 import classes from './Game.module.scss';
 
 const Game = () => {
-  const [data, loading, error] = useFetching();
+  const { data, loading } = useFetching();
 
   return (
     (data && (
       <article className={classes.game}>
         <Container>
           <GameHelp />
-          <GameContent data={data as IBird[]} />
+          <GameContent data={data} />
         </Container>
       </article>
     )) ||

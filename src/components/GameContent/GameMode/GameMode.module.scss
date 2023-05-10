@@ -1,0 +1,17 @@
+@import "../../../theme/variables";
+.section {
+  margin-bottom: 20px;
+}
+.categories {
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}

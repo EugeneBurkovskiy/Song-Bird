@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { IBird } from 'context/BirdsContext';
-import { getBirds } from '../service/config';
+import { getBirds } from '../firebase/get-birds';
 
 const useFetching = () => {
   const [data, setData] = useState<IBird[]>();
@@ -23,7 +23,7 @@ const useFetching = () => {
     getData();
   }, []);
 
-  return [data, loading, error];
+  return { data, loading, error };
 };
 
 export default useFetching;
