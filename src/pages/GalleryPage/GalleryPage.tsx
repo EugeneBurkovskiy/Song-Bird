@@ -32,7 +32,7 @@ function reducer(state: ISearchParams, action: searchParamsAction) {
   }
 }
 
-const Gallery = () => {
+const GalleryPage = () => {
   const { data, loading } = useFetching();
   const [searchParams, dispatch] = useReducer(reducer, initialSearchParams);
 
@@ -47,4 +47,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default GalleryPage;

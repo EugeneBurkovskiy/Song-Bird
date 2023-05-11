@@ -7,6 +7,7 @@ import GameVariantsSection from './GameVariantsSection/GameVariantsSection';
 import CustomButton from '../Buttons/CustomButton/CustomButton';
 import GameProgress from './GameProgress/GameProgress';
 import GameFinishWindow from './GameFinishWindow/GameFinishWindow';
+import getRandomQuestion from '../../utils/getRandomQuestion';
 
 export interface IStats {
   currentLvl: number;
@@ -17,7 +18,7 @@ interface IProps {
   data: IBird[];
 }
 
-const GameContent: React.FC<IProps> = ({ data }) => {
+const Game: React.FC<IProps> = ({ data }) => {
   const { setScore } = useContext(BirdsContext);
   const [currentGameMode, setCurrentGameMode] = useState<string>(data[0].category);
   const [currentLvl, setCurrentLvl] = useState<number>(1);
@@ -46,15 +47,11 @@ const GameContent: React.FC<IProps> = ({ data }) => {
     };
   }, [currentGameMode, options]);
 
-  function getRandomQuestion(options: IBird[]) {
-    return options[Math.floor(Math.random() * 6)];
-  }
-
-  function handleNextLvl() {
+  const handleNextLvl = () => {
     setCurrentLvl((prev) => (prev += 1));
-  }
+  };
 
-  function handleFinish() {
+  const handleFinish = () => {
     setScore((prev) => [
       ...prev,
       { points: currentScore, mode: currentGameMode, date: new Date() },
@@ -65,7 +62,7 @@ const GameContent: React.FC<IProps> = ({ data }) => {
       setCurrentLvl(1);
       setCurrentScore(0);
     }, 2000);
-  }
+  };
 
   return (
     <>
@@ -95,4 +92,4 @@ const GameContent: React.FC<IProps> = ({ data }) => {
   );
 };
 
-export default GameContent;
+export default Game;

@@ -4,13 +4,13 @@ import { getFirestore } from 'firebase/firestore';
 import { getDatabase, ref } from 'firebase/database';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDPJ4UNtdo3QRYQE3xyJKvdbNM_U7TCVjM',
-  authDomain: 'songbird-509b0.firebaseapp.com',
-  projectId: 'songbird-509b0',
-  storageBucket: 'songbird-509b0.appspot.com',
-  messagingSenderId: '800476766807',
-  appId: '1:800476766807:web:40c093cc39b71e88e7b912',
-  databaseURL: 'tps://songbird-509b0-default-rtdb.europe-west1.firebasedatabase.app',
+  apiKey: import.meta.env.VITE_APP_API_KEY,
+  authDomain: import.meta.env.VITE_APP_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_APP_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_APP_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_APP_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_APP_ID,
+  databaseURL: import.meta.env.VITE_APP_DATABASE_URL,
 };
 
 const app = initializeApp(firebaseConfig);

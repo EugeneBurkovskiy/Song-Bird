@@ -3,7 +3,7 @@ import React from 'react';
 import BirdCard from '../BirdCard/BirdCard';
 import { IBird } from 'context/BirdsContext';
 import NotFound from '../NotFound/NotFound';
-import { ISearchParams } from '../../pages/Gallery/Gallery';
+import { ISearchParams } from '../../pages/GalleryPage/GalleryPage';
 
 import classes from './GalleryCardsList.module.scss';
 
