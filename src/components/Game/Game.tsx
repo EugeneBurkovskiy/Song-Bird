@@ -44,6 +44,7 @@ const Game: React.FC<IProps> = ({ data }) => {
     setQuestion(getRandomQuestion(options));
     return () => {
       setCurrentLvl(1);
+      setCurrentScore(0);
     };
   }, [currentGameMode, options]);
 
