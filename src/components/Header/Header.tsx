@@ -10,9 +10,10 @@ import classes from './Header.module.scss';
 const Header = () => {
   const [mobile, setMobile] = useState(false);
   const [showBurgerMenu, setShowBurgerMenu] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   function handleResize() {
-    if (window.screen.width < 768) {
+    if (window.screen.width < 769) {
       setMobile(true);
     } else {
       setMobile(false);
@@ -27,8 +28,25 @@ const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      if (scrollTop > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className={classes.header}>
+    <header className={`${classes.header} ${isScrolled ? classes.header__black : ''}`}>
       <Container>
         {mobile ? (
           <BurgerButton setShowBurgerMenu={setShowBurgerMenu} showBurgerMenu={showBurgerMenu} />

@@ -4,5 +4,17 @@
   background-color: $headerbackground;
   display: flex;
   align-items: center;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all $transitionTime;
+  &__black {
+    background-color: $burgerbackground;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 70px;
+  }
 }
