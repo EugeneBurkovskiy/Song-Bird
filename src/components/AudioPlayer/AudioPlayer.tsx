@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import PauseIcon from '../Icons/AudioIcons/PauseIcon/PauseIcon';
 import PlayIcon from '../Icons/AudioIcons/PlayIcon/PlayIcon';
@@ -13,8 +13,16 @@ interface IProps {
 
 const AudioPlayer: React.FC<IProps> = ({ audioUrl }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [durationValue, setDurationValue] = useState('0');
+  const [durationValue, setDurationValue] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    setIsPlaying(false);
+  }, [audioUrl]);
+
+  const handleMetadata = () => {
+    setDurationValue(0);
+  };
 
   const handleTimeUpdate = (event: React.ChangeEvent<HTMLAudioElement>) => {
     const audio = event.target;
@@ -23,7 +31,7 @@ const AudioPlayer: React.FC<IProps> = ({ audioUrl }) => {
       const duration = audio.duration;
       const percentage = (currentTime / duration) * 100;
 
-      setDurationValue(`${percentage}`);
+      setDurationValue(percentage);
     }
   };
 
@@ -53,7 +61,12 @@ const AudioPlayer: React.FC<IProps> = ({ audioUrl }) => {
 
   return (
     <div className={classes.player}>
-      <audio src={audioUrl} ref={audioRef} onTimeUpdate={handleTimeUpdate} />
+      <audio
+        src={audioUrl}
+        ref={audioRef}
+        onTimeUpdate={handleTimeUpdate}
+        onLoadedMetadata={handleMetadata}
+      />
       {isPlaying ? (
         <button onClick={handlePause} className={classes.player__button}>
           <PauseIcon />
@@ -63,7 +76,7 @@ const AudioPlayer: React.FC<IProps> = ({ audioUrl }) => {
           <PlayIcon />
         </button>
       )}
-      <CustomRangeInput min="0" max="100" value={durationValue} onChange={handleDuration} />
+      <CustomRangeInput min="0" max="100" value={`${durationValue}`} onChange={handleDuration} />
       <VolumeControls audio={audioRef} />
     </div>
   );
