@@ -53,10 +53,10 @@ const Header = () => {
         ) : (
           <DesktopMenu />
         )}
+        {mobile && (
+          <BurgerMenu showBurgerMenu={showBurgerMenu} setShowBurgerMenu={setShowBurgerMenu} />
+        )}
       </Container>
-      {mobile && (
-        <BurgerMenu showBurgerMenu={showBurgerMenu} setShowBurgerMenu={setShowBurgerMenu} />
-      )}
     </header>
   );
 };

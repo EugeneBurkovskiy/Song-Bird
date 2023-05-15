@@ -1,0 +1,35 @@
+@import "../../theme/variables";
+.input {
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background-color: $buttonDisableColor;
+  border-radius: 4px;
+  outline: none;
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background-color: $buttonActiveColor;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all $transitionTime;
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+  &::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background-color: $buttonColor;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all $transitionTime;
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@import "../../theme/variables";
+.player {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 50px auto;
+  column-gap: 10px;
+  &__button {
+    background-color: transparent;
+  }
+}

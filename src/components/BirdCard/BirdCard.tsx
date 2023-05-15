@@ -2,6 +2,7 @@ import React from 'react';
 
 import { IBird } from 'context/BirdsContext';
 import Card from '../Сard/Card';
+import AudioPlayer from '../../components/AudioPlayer/AudioPlayer';
 
 import classes from './BirdCard.module.scss';
 
@@ -32,8 +33,8 @@ const BirdCard: React.FC<IProps> = ({ bird, hide = false, details = false, cover
         {details && <h4 className={classes.card__species}>{bird.species}</h4>}
         {details && <h4 className={classes.card__сategory}>{bird.category}</h4>}
         <div className={classes.card__divider}></div>
-        <div className={classes.card__audio}>
-          <audio src={bird.audio} controls></audio>
+        <div className={`${classes.card__audio} ${details && classes['card__audio-details']}`}>
+          <AudioPlayer audioUrl={bird.audio} />
         </div>
       </div>
       {details && <p className={classes.card__description}>{bird.description}</p>}

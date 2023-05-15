@@ -1,0 +1,20 @@
+@import "../../../../theme/variables";
+.svg {
+  width: 40px;
+  path {
+    transition: all $transitionTime;
+    fill: $fontColor;
+  }
+  rect {
+    transition: all $transitionTime;
+    fill: $fontColor;
+  }
+  &:hover {
+    path {
+      fill: $buttonHoverColor;
+    }
+    rect {
+      fill: $buttonHoverColor;
+    }
+  }
+}

@@ -36,6 +36,9 @@
   &__audio {
     width: 100%;
     grid-column: 2;
+    &-details {
+      grid-column: 1/3;
+    }
     audio {
       width: 100%;
     }
