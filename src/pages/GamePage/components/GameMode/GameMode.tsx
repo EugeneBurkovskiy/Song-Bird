@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 
-import CategoryButton from '../../Buttons/CategoryButton/CategoryButton';
-import Card from '../../Сard/Card';
+import CategoryButton from '../../../../components/Buttons/CategoryButton/CategoryButton';
+import Card from '../../../../components/Сard/Card';
 import { IBird } from 'context/BirdsContext';
 
 import classes from '../GameMode/GameMode.module.scss';

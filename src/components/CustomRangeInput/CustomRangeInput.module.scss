@@ -16,9 +16,6 @@
     border: none;
     cursor: pointer;
     transition: all $transitionTime;
-    &:hover {
-      transform: scale(1.3);
-    }
   }
   &::-moz-range-thumb {
     width: 16px;
@@ -28,8 +25,20 @@
     border: none;
     cursor: pointer;
     transition: all $transitionTime;
-    &:hover {
-      transform: scale(1.3);
+  }
+}
+
+@media (min-width: 769px) {
+  .input {
+    &::-webkit-slider-thumb {
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+    &::-moz-range-thumb {
+      &:hover {
+        transform: scale(1.3);
+      }
     }
   }
 }

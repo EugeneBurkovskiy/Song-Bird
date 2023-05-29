@@ -1,12 +1,12 @@
 import React from 'react';
 
 import PageContainer from '../../components/PageContainer/PageContainer';
-import Score from '../../components/Score/Score';
+import ScoreContent from './components/ScoreContent/ScoreContent';
 
 const ScorePage = () => {
   return (
     <PageContainer title="Score">
-      <Score />
+      <ScoreContent />
     </PageContainer>
   );
 };

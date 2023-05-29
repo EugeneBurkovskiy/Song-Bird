@@ -1,4 +1,4 @@
-@import "../../theme/variables";
+@import "../../../../theme/variables";
 
 .help {
   &__button {
@@ -16,9 +16,6 @@
     z-index: 2;
     right: 20px;
     bottom: 20px;
-    &:hover {
-      background-color: $buttonHoverColor;
-    }
   }
   &__info {
     padding: 40px 20px 20px 20px;
@@ -27,6 +24,16 @@
     display: flex;
     flex-direction: column;
     row-gap: 10px;
+  }
+}
+
+@media (min-width: 769px) {
+  .help {
+    &__button {
+      &:hover {
+        background-color: $buttonHoverColor;
+      }
+    }
   }
 }
 

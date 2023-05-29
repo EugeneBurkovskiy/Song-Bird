@@ -9,15 +9,20 @@
   transition: all $transitionTime;
   border-radius: $buttonBorderRadius;
   border: 3px solid $buttonColor;
-  &:hover {
-    background-color: $buttonHoverColor;
-  }
   &_active {
     background-color: $buttonActiveColor;
     border-color: $fontColor;
   }
   &_disable {
     background-color: $buttonDisableColor;
+  }
+}
+
+@media (min-width: 769px) {
+  .category {
+    &:hover {
+      background-color: $buttonHoverColor;
+    }
   }
 }
 

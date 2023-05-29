@@ -1,9 +1,9 @@
 import React from 'react';
 
-import BirdCard from '../BirdCard/BirdCard';
+import BirdCard from '../../../../components/BirdCard/BirdCard';
 import { IBird } from 'context/BirdsContext';
-import NotFound from '../NotFound/NotFound';
-import { ISearchParams } from '../../pages/GalleryPage/GalleryPage';
+import NotFound from '../../../../components/NotFound/NotFound';
+import { ISearchParams } from '../../GalleryPage';
 
 import classes from './GalleryCardsList.module.scss';
 

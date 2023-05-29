@@ -24,13 +24,6 @@
     transform: translateY(-50%);
     transition: all $transitionTime;
   }
-  &:hover {
-    background-color: $buttonHoverColor;
-    box-shadow: $windowShadow;
-    &::before {
-      background-color: $fontColor;
-    }
-  }
   &_true {
     pointer-events: none;
     background-color: $buttonColor;
@@ -44,6 +37,18 @@
     pointer-events: none;
     &::before {
       background-color: $buttonFalseColor;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .button {
+    &:hover {
+      background-color: $buttonHoverColor;
+      box-shadow: $windowShadow;
+      &::before {
+        background-color: $fontColor;
+      }
     }
   }
 }

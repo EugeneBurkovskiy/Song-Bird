@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ModalWindow from '../../ModalWindow/ModalWindow';
-import ProgressCircle from '../../ProgressCircle/ProgressCircle';
+import ModalWindow from '../../../../components/ModalWindow/ModalWindow';
+import ProgressCircle from '../../../../components/ProgressCircle/ProgressCircle';
 
 import classes from './GameFinishWindow.module.scss';
 

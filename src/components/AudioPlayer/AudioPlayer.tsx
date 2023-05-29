@@ -20,10 +20,6 @@ const AudioPlayer: React.FC<IProps> = ({ audioUrl }) => {
     setIsPlaying(false);
   }, [audioUrl]);
 
-  const handleMetadata = () => {
-    setDurationValue(0);
-  };
-
   const handleTimeUpdate = (event: React.ChangeEvent<HTMLAudioElement>) => {
     const audio = event.target;
     if (audio) {
@@ -31,7 +27,9 @@ const AudioPlayer: React.FC<IProps> = ({ audioUrl }) => {
       const duration = audio.duration;
       const percentage = (currentTime / duration) * 100;
 
-      setDurationValue(percentage);
+      if (percentage === 100) setIsPlaying(false);
+
+      setDurationValue(percentage || 0);
     }
   };
 
@@ -61,12 +59,7 @@ const AudioPlayer: React.FC<IProps> = ({ audioUrl }) => {
 
   return (
     <div className={classes.player}>
-      <audio
-        src={audioUrl}
-        ref={audioRef}
-        onTimeUpdate={handleTimeUpdate}
-        onLoadedMetadata={handleMetadata}
-      />
+      <audio src={audioUrl} ref={audioRef} onTimeUpdate={handleTimeUpdate} />
       {isPlaying ? (
         <button onClick={handlePause} className={classes.player__button}>
           <PauseIcon />

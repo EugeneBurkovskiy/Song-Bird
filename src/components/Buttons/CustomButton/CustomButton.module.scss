@@ -9,9 +9,6 @@
   transition: all $transitionTime;
   border-radius: $buttonBorderRadius;
   box-shadow: $windowShadow;
-  &:hover {
-    background-color: $buttonHoverColor;
-  }
   &_active {
     background-color: $buttonActiveColor;
   }
@@ -19,5 +16,13 @@
     background-color: $buttonDisableColor;
     pointer-events: none;
     box-shadow: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .button {
+    &:hover {
+      background-color: $buttonHoverColor;
+    }
   }
 }

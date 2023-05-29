@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-import Card from '../../Сard/Card';
-import OptionButton from '../../Buttons/OptionButton/OptionButton';
+import Card from '../../../../components/Сard/Card';
+import OptionButton from '../../../../components/Buttons/OptionButton/OptionButton';
 import { IBird } from 'context/BirdsContext';
-import BirdCard from '../../BirdCard/BirdCard';
+import BirdCard from '../../../../components/BirdCard/BirdCard';
 
 import classes from './GameVariantsSection.module.scss';
 

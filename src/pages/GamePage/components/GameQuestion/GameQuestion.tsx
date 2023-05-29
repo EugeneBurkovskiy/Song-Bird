@@ -1,7 +1,7 @@
 import React from 'react';
 
-import BirdCard from '../../BirdCard/BirdCard';
-import { IBird } from '../../../context/BirdsContext';
+import BirdCard from '../../../../components/BirdCard/BirdCard';
+import { IBird } from '../../../../context/BirdsContext';
 
 import classes from './GameQuestion.module.scss';
 

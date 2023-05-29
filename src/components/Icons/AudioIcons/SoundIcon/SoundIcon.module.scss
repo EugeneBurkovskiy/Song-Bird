@@ -9,12 +9,17 @@
     transition: all $transitionTime;
     fill: $fontColor;
   }
-  &:hover {
-    path {
-      fill: $buttonHoverColor;
-    }
-    rect {
-      fill: $buttonHoverColor;
+}
+
+@media (min-width: 769px) {
+  .svg {
+    &:hover {
+      path {
+        fill: $buttonHoverColor;
+      }
+      rect {
+        fill: $buttonHoverColor;
+      }
     }
   }
 }

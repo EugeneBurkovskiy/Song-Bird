@@ -1,7 +1,7 @@
 import React from 'react';
 
-import SearchInput from '../SearchInput/SearchInput';
-import { searchParamsAction } from '../../pages/GalleryPage/GalleryPage';
+import SearchInput from '../../../../components/SearchInput/SearchInput';
+import { searchParamsAction } from '../../GalleryPage';
 
 import classes from './GalleryFilter.module.scss';
 

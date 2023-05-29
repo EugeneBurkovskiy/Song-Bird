@@ -1,14 +1,14 @@
 import React, { useContext, useMemo } from 'react';
 
-import { IScore, BirdsContext } from '../../context/BirdsContext';
-import parseDate from '../../utils/parseDate';
-import NotFound from '../../components/NotFound/NotFound';
-import ScoreList from './ScoreList/ScoreList';
-import Card from '../../components/Сard/Card';
+import { IScore, BirdsContext } from '../../../../context/BirdsContext';
+import parseDate from '../../../../utils/parseDate';
+import NotFound from '../../../../components/NotFound/NotFound';
+import ScoreList from '../ScoreList/ScoreList';
+import Card from '../../../../components/Сard/Card';
 
-import classes from './Score.module.scss';
+import classes from './ScoreContent.module.scss';
 
-const Score = () => {
+const ScoreContent = () => {
   const { score } = useContext(BirdsContext);
 
   const scoreCopy: IScore[] = useMemo(() => score.slice(), [score]);
@@ -17,6 +17,7 @@ const Score = () => {
     () => scoreCopy.map((item) => `${scoreCopy.indexOf(item) + 1}`),
     [scoreCopy]
   );
+
   const scorePointsArr = useMemo(() => scoreCopy.map((item) => `${item.points}`), [scoreCopy]);
   const scoreModeArr = useMemo(() => scoreCopy.map((item) => item.mode), [scoreCopy]);
   const scoreDateArr = useMemo(() => scoreCopy.map((item) => parseDate(item.date)), [scoreCopy]);
@@ -35,4 +36,4 @@ const Score = () => {
   );
 };
 
-export default Score;
+export default ScoreContent;

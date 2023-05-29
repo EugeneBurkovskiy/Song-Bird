@@ -16,10 +16,15 @@
   justify-content: center;
   align-items: center;
   transition: all $transitionTime;
-  &:hover {
-    border-color: $buttonHoverColor;
-    path {
-      fill: $buttonHoverColor;
+}
+
+@media (min-width: 769px) {
+  .wrapper {
+    &:hover {
+      border-color: $buttonHoverColor;
+      path {
+        fill: $buttonHoverColor;
+      }
     }
   }
 }

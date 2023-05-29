@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 
-import { BirdsContext, IBird } from '../../context/BirdsContext';
-import GameMode from './GameMode/GameMode';
-import GameQuestion from './GameQuestion/GameQuestion';
-import GameVariantsSection from './GameVariantsSection/GameVariantsSection';
-import CustomButton from '../Buttons/CustomButton/CustomButton';
-import GameProgress from './GameProgress/GameProgress';
-import GameFinishWindow from './GameFinishWindow/GameFinishWindow';
-import getRandomQuestion from '../../utils/getRandomQuestion';
+import { BirdsContext, IBird } from '../../../../context/BirdsContext';
+import GameMode from '../GameMode/GameMode';
+import GameQuestion from '../GameQuestion/GameQuestion';
+import GameVariantsSection from '../GameVariantsSection/GameVariantsSection';
+import CustomButton from '../../../../components/Buttons/CustomButton/CustomButton';
+import GameProgress from '../GameProgress/GameProgress';
+import GameFinishWindow from '../GameFinishWindow/GameFinishWindow';
+import getRandomQuestion from '../../../../utils/getRandomQuestion';
 
 export interface IStats {
   currentLvl: number;
@@ -18,7 +18,7 @@ interface IProps {
   data: IBird[];
 }
 
-const Game: React.FC<IProps> = ({ data }) => {
+const GameContent: React.FC<IProps> = ({ data }) => {
   const { setScore } = useContext(BirdsContext);
   const [currentGameMode, setCurrentGameMode] = useState<string>(data[0].category);
   const [currentLvl, setCurrentLvl] = useState<number>(1);
@@ -93,4 +93,4 @@ const Game: React.FC<IProps> = ({ data }) => {
   );
 };
 
-export default Game;
+export default GameContent;

@@ -1,9 +1,9 @@
 import React, { useReducer } from 'react';
 
 import Loading from '../../components/Loading/Loading';
-import GalleryList from '../../components/GalleryCardsList/GalleryCardsList';
+import GalleryList from './components/GalleryCardsList/GalleryCardsList';
 import PageContainer from '../../components/PageContainer/PageContainer';
-import GalleryFilter from '../../components/GalleryFilter/GalleryFilter';
+import GalleryFilter from './components/GalleryFilter/GalleryFilter';
 import useFetching from '../../hooks/useFetching';
 import NotFound from '../../components/NotFound/NotFound';
 

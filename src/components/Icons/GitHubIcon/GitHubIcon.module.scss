@@ -4,9 +4,14 @@
     fill: $fontColor;
     transition: all $transitionTime;
   }
-  &:hover {
-    g {
-      fill: $buttonHoverColor;
+}
+
+@media (min-width: 769px) {
+  .link {
+    &:hover {
+      g {
+        fill: $buttonHoverColor;
+      }
     }
   }
 }
