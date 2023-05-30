@@ -10,7 +10,7 @@ import GameHelp from './components/GameHelp/GameHelp';
 import classes from './GamePage.module.scss';
 
 const GamePage = () => {
-  const { data, loading } = useFetching();
+  const { data, error } = useFetching();
 
   return (
     (data && (
@@ -21,7 +21,7 @@ const GamePage = () => {
         </Container>
       </article>
     )) ||
-    (loading && <Loading />) || <NotFound />
+    (error && <NotFound />) || <Loading />
   );
 };
 

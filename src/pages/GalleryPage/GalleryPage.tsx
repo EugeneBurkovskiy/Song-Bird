@@ -33,7 +33,7 @@ function reducer(state: ISearchParams, action: searchParamsAction) {
 }
 
 const GalleryPage = () => {
-  const { data, loading } = useFetching();
+  const { data, error } = useFetching();
   const [searchParams, dispatch] = useReducer(reducer, initialSearchParams);
 
   return (
@@ -43,7 +43,7 @@ const GalleryPage = () => {
         <GalleryList birds={data} searchParams={searchParams} />
       </PageContainer>
     )) ||
-    (loading && <Loading />) || <NotFound />
+    (error && <NotFound />) || <Loading />
   );
 };
 

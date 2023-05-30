@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 
-import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
-import GamePage from '../pages/GamePage/GamePage';
+const GamePage = lazy(() => import('../pages/GamePage/GamePage'));
+const ScorePage = lazy(() => import('../pages/ScorePage/ScorePage'));
+const GalleryPage = lazy(() => import('../pages/GalleryPage/GalleryPage'));
 import HomePage from '../pages/HomePage/HomePage';
-import ScorePage from '../pages/ScorePage/ScorePage';
-import GalleryPage from '../pages/GalleryPage/GalleryPage';
+import Loading from '../components/Loading/Loading';
+import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
 
 export const routes = [
   {
@@ -15,17 +16,29 @@ export const routes = [
   {
     name: 'Game',
     path: '/game',
-    element: <GamePage />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <GamePage />
+      </Suspense>
+    ),
   },
   {
     name: 'Score',
     path: '/score',
-    element: <ScorePage />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <ScorePage />
+      </Suspense>
+    ),
   },
   {
     name: 'Gallery',
     path: '/gallery',
-    element: <GalleryPage />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <GalleryPage />
+      </Suspense>
+    ),
   },
   {
     name: '404',
