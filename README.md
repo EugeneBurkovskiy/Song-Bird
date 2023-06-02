@@ -1,5 +1,5 @@
 # Song Birds
-![Song Birds](https://github.com/EugeneBurkovskiy/Song-Bird/assets/109791286/ea72ff78-8a18-4789-b7e2-f0250268127e)
+![Song Birds](https://github.com/EugeneBurkovskiy/Song-Bird/assets/109791286/cbe83c23-7e88-4c79-beca-d2f8135e34ef)
 
 This is a quiz app. The point is to guess the names of birds by their singing. The game has several categories of birds, a table of results and a gallery. Perfect for enjoying your leisure time.
 
