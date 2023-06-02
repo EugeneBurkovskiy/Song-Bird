@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { IBird } from 'context/BirdsContext';
 import Card from '../Сard/Card';
 import AudioPlayer from '../../components/AudioPlayer/AudioPlayer';

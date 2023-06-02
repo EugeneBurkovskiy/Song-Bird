@@ -1,5 +1,3 @@
-import React from 'react';
-
 import GitHubIcon from '../Icons/GitHubIcon/GitHubIcon';
 import Container from '../Container/Container';
 

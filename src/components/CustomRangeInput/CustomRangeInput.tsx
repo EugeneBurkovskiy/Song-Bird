@@ -1,5 +1,3 @@
-import React from 'react';
-
 import classes from './CustomRangeInput.module.scss';
 
 interface IProps {
@@ -20,6 +18,7 @@ const CustomRangeInput: React.FC<IProps> = ({ min, max, step, value, onChange })
       value={value}
       onChange={onChange}
       className={classes.input}
+      data-testid={'range-input'}
     />
   );
 };

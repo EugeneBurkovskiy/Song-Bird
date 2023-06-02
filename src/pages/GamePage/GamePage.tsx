@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Container from '../../components/Container/Container';
 import Loading from '../../components/Loading/Loading';
 import GameContent from './components/GameContent/GameContent';

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import BirdCard from '../../../../components/BirdCard/BirdCard';
 import { IBird } from '../../../../context/BirdsContext';
 

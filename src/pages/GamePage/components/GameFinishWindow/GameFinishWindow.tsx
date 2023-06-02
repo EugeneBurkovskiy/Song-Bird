@@ -1,5 +1,3 @@
-import React from 'react';
-
 import ModalWindow from '../../../../components/ModalWindow/ModalWindow';
 import ProgressCircle from '../../../../components/ProgressCircle/ProgressCircle';
 

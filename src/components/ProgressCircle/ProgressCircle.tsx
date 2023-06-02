@@ -1,5 +1,3 @@
-import React from 'react';
-
 import classes from './ProgressCircle.module.scss';
 
 interface ProgressCircleProps {

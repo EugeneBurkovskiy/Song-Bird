@@ -1,5 +1,3 @@
-import React from 'react';
-
 import PageContainer from '../../components/PageContainer/PageContainer';
 import ScoreContent from './components/ScoreContent/ScoreContent';
 

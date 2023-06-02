@@ -1,10 +1,13 @@
-import React from 'react';
-
 import classes from './MuteIcon.module.scss';
 
 const MuteIcon = () => {
   return (
-    <svg viewBox="0 0 35 30" xmlns="http://www.w3.org/2000/svg" className={classes.svg}>
+    <svg
+      viewBox="0 0 35 30"
+      xmlns="http://www.w3.org/2000/svg"
+      className={classes.svg}
+      data-testid="mute"
+    >
       <defs></defs>
       <title />
       <g data-name="Layer 35" id="Layer_35">

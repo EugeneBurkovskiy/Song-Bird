@@ -1,5 +1,3 @@
-import React from 'react';
-
 import classes from './CategoryButton.module.scss';
 
 interface IProps {

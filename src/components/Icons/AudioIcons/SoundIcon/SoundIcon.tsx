@@ -1,10 +1,13 @@
-import React from 'react';
-
 import classes from './SoundIcon.module.scss';
 
 const SoundIcon = () => {
   return (
-    <svg viewBox="0 0 35 30" xmlns="http://www.w3.org/2000/svg" className={classes.svg}>
+    <svg
+      viewBox="0 0 35 30"
+      xmlns="http://www.w3.org/2000/svg"
+      className={classes.svg}
+      data-testid="sound"
+    >
       <defs></defs>
       <title />
       <g data-name="Layer 34" id="Layer_34">

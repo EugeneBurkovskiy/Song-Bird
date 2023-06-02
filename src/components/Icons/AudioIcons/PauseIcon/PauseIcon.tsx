@@ -1,10 +1,8 @@
-import React from 'react';
-
 import classes from './PauseIcon.module.scss';
 
 const PauseIcon = () => {
   return (
-    <div className={classes.wrapper}>
+    <div className={classes.wrapper} data-testid="pause">
       <svg id="blue_copy" className={classes.svg} version="1.1" viewBox="25 25 50 50">
         <g id="Layer_7_copy">
           <path d="M39.806,72.858h-8.915c-2.176,0-3.94-1.764-3.94-3.94V31.119c0-2.176,1.764-3.94,3.94-3.94h8.915   c2.176,0,3.94,1.764,3.94,3.94v37.799C43.746,71.094,41.982,72.858,39.806,72.858z" />

@@ -1,5 +1,5 @@
 import { screen, render } from '@testing-library/react';
-import React from 'react';
+
 import Score from './ScorePage';
 import { BirdsContext } from '../../context/BirdsContext';
 import { mockContext } from '../../../test/mocks/mocks';
@@ -11,9 +11,9 @@ describe('Score', () => {
         <Score />
       </BirdsContext.Provider>
     );
-    const title = screen.getByRole('heading');
+    const title = screen.getAllByText('Score');
     const mode = screen.getByText(mockContext.score[0].mode);
-    expect(title).toHaveTextContent('Score');
+    expect(title).toHaveLength(2);
     expect(mode).toBeInTheDocument();
   });
   it('should render error', () => {
@@ -22,9 +22,9 @@ describe('Score', () => {
         <Score />
       </BirdsContext.Provider>
     );
-    const title = screen.getByRole('heading');
+    const title = screen.getAllByText('Score');
     const error = screen.getByText('Play at least one game to see your stats');
-    expect(title).toHaveTextContent('Score');
+    expect(title).toHaveLength(1);
     expect(error).toBeInTheDocument();
   });
 });

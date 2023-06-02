@@ -1,10 +1,8 @@
-import React from 'react';
-
 import classes from './PlayIcon.module.scss';
 
 const PlayIcon = () => {
   return (
-    <div className={classes.wrapper}>
+    <div className={classes.wrapper} data-testid="play">
       <svg id="blue_copy" className={classes.svg} version="1.1" viewBox="25 25 50 50">
         <g id="Layer_4_copy">
           <path d="M31.356,25.677l38.625,22.3c1.557,0.899,1.557,3.147,0,4.046l-38.625,22.3c-1.557,0.899-3.504-0.225-3.504-2.023V27.7   C27.852,25.902,29.798,24.778,31.356,25.677z" />
