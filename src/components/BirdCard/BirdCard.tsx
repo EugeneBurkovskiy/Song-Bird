@@ -24,7 +24,7 @@ const BirdCard: React.FC<IProps> = ({ bird, hide = false, details = false, cover
           {hide ? (
             <div className={classes['card__image-question']}>?</div>
           ) : (
-            <img src={bird.image} alt={bird.name} />
+            <img src={bird.image} alt={bird.name} loading="lazy" />
           )}
         </div>
         <h3 className={classes.card__name}>{hide ? '***' : bird.name}</h3>
