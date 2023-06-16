@@ -88,7 +88,7 @@ const GameContent: React.FC<IProps> = ({ data }) => {
         <CustomButton title="Finish" disable={!!!correctAnswer} onClick={() => handleFinish()} />
       )}
 
-      {showModal && <GameFinishWindow gameMode={currentGameMode} points={currentScore} />}
+      <GameFinishWindow gameMode={currentGameMode} points={currentScore} show={showModal} />
     </>
   );
 };
